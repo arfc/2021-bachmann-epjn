@@ -35,6 +35,9 @@ date for any reactor closed down before December 2020. Any reactor still in
 operation in December 2020 is assumed to operate for 60 years after it's 
 grid connection date. Only reactors with a power level above 400 MWe were included 
 in the simulations to ensure that no research or experimental reactors are used. 
+The mass of fuel to use in the \gls{LWR} reactor cores, including the mass of 
+fuel required for each refueling, was obtained from \cite{todreas_nuclear_2012,cacuci_handbook_2010}.
+
 
 We used a variety of open source documents to obtain data about the advanced reactors
 \cite{harlan_x-energy_2018, hussain_advances_2018, mitchell_usnc_2020}. This includes 
@@ -66,4 +69,52 @@ comprised of \gls{TRISO} particles, but in different forms.
 Each of the simulations run from 1965 to 2090, with the transition beginning 
 in 2025. Therefore, in the no growth scenarios the power demand is held constant 
 at the power produced in 2025. Fuel cycle facilities included in the simulations
-range from the uranium mine to the final disposal of the spent fuel. 
+range from the uranium mine to the final disposal of the spent fuel. Figure 
+\ref{fig:fuel_cycle} shows the fuel cycle modeled in each simulation. Scenario 
+1 only includes the facilities in blue. All facilities are used in Scenarios 
+2-5 and teh facilities in red are used only for material for the advanced reactors, 
+such as \gls{HALEU} and \gls{TRISO} fuel. 
+
+\begin{figure}[ht]
+        \centering
+        \begin{tikzpicture}[node distance=1.5cm]
+            \node (mine) [facility] {Uranium Mine};
+            \node (mill) [facility, below of=mine] {Uranium Mill};
+            \node (conversion) [facility, below of=mill] {Conversion};
+            \node (enrichment) [facility, below of=conversion, xshift=-2cm]{Enrichment};
+            \node (enrichment2) [transition, below of=conversion, xshift=2cm]{Enrichment};
+            \node (fabrication2) [transition, below of=enrichment2,yshift=-1cm]{Fuel Fabrication};
+            \node (fabrication) [facility, below of=enrichment, yshift=-1cm]{Fuel Fabrication};
+            \node (reactor) [facility, below of=fabrication]{Reactor};
+            \node (adv_reactor) [transition, below of=fabrication2]{Advanced Reactor};
+            \node (wetstorage) [facility, below of=reactor]{Wet Storage};
+            \node (drystorage) [facility, below of=wetstorage]{Dry Storage};
+            \node (sinkhlw) [facility, below of=drystorage, xshift=2cm]{HLW Sink};
+            \node (sinkllw) [facility, below of=enrichment, xshift=2cm]{LLW Sink};
+    
+            \draw [arrow] (mine) -- node[anchor=east]{Natural U} (mill); 
+            \draw [arrow] (mill) -- node[anchor=east]{U$_3$O$_8$}(conversion); 
+            \draw [arrow] (conversion) -- node[anchor=east]{UF$_6$}(enrichment);
+            \draw [arrow] (enrichment) -- node[anchor=east]{Enriched U}(fabrication);
+            \draw [arrow] (conversion) -- node[anchor=east]{UF$_6$}(enrichment2);
+            \draw [arrow] (enrichment2) -- node[anchor=west]{HALEU}(fabrication2);
+            \draw [arrow] (enrichment) -- node[anchor=east]{Tails}(sinkllw);
+            \draw [arrow] (enrichment2) -- node[anchor=west]{Tails}(sinkllw);
+            \draw [arrow] (fabrication) -- node[anchor=east]{Fresh UOX}(reactor);
+            \draw [arrow] (fabrication2) -- node[anchor=west]{TRSIO fuel}(adv_reactor);
+            \draw [arrow] (reactor) -- node[anchor=east]{Spent UOX}(wetstorage);
+            \draw [arrow] (wetstorage) -- node[anchor=east]{Cool Spent UOX}(drystorage);
+            \draw [arrow] (drystorage) -- node[anchor=east]{Casked Spent UOX}(sinkhlw);
+            \draw [arrow] (adv_reactor) -- node[anchor=west]{Spent TRISO Fuel}(sinkhlw);
+    
+            \end{tikzpicture}
+        \caption{Fuel cycle facilities and material flow between facilities. Facilities in 
+        red are deployed in the transition scenarios.}
+        \label{fig:fuel_cycle}
+    \end{figure}
+
+The simulation uses recipes to deine the composition of each material that 
+goes into or comes out of a facility. Spent \gls{LWR} fuel recipes assumes a 
+51 MWd/MTHM burnup. Spent and fresh \gls{LWR} fuel recipes were obtained 
+from \cite{yacout_visionverifiable_2006}. All other recipes capture the 
+necessary isotopic ratios of uranium, but include no other elements. 
