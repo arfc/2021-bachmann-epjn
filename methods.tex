@@ -37,7 +37,7 @@ grid connection date. Only reactors with a power level above 400 MWe were includ
 in the simulations to ensure that no research or experimental reactors are used. 
 The mass of fuel to use in the \gls{LWR} reactor cores, including the mass of 
 fuel required for each refueling, was obtained from \cite{todreas_nuclear_2012,cacuci_handbook_2010}.
-
+All \glspl{LWR} are assumed to have an 18 month cycle length. 
 
 We used a variety of open source documents to obtain data about the advanced reactors
 \cite{harlan_x-energy_2018, hussain_advances_2018, mitchell_usnc_2020}. This includes 
@@ -61,19 +61,25 @@ comprised of \gls{TRISO} particles, but in different forms.
             Cycle Length (years) & 20 & online refuel\\
             Fuel form & \gls{TRISO} compacts & \gls{TRISO} pebbles\\
             Reactor Lifetime & 20 years & 60 years \\
-            Mass of urnaium per refueling (kg) & 1912.9& 223.87 \\
+            Mass of uranium per refueling (kg) & 1912.9 & 223.87 \\
             \hline
         \end{tabular}
     \end{table}
 
 Each of the simulations run from 1965 to 2090, with the transition beginning 
 in 2025. Therefore, in the no growth scenarios the power demand is held constant 
-at the power produced in 2025. Fuel cycle facilities included in the simulations
+at the power produced in 2025. The \glspl{LWR} are decommissioned as described 
+above and the advanced reactors are deployed as needed to meet the prescribed 
+power demand of the scenario. 
+
+Fuel cycle facilities included in the simulations
 range from the uranium mine to the final disposal of the spent fuel. Figure 
 \ref{fig:fuel_cycle} shows the fuel cycle modeled in each simulation. Scenario 
 1 only includes the facilities in blue. All facilities are used in Scenarios 
-2-5 and teh facilities in red are used only for material for the advanced reactors, 
-such as \gls{HALEU} and \gls{TRISO} fuel. 
+2-5 and the facilities in red are used only for material for the advanced reactors, 
+such as \gls{HALEU} and \gls{TRISO} fuel. Although the back end of the fuel 
+cycle is modeled, quantifying any waste amounts is considered outside the 
+scope of this work. 
 
 \begin{figure}[ht]
         \centering
