@@ -1,13 +1,11 @@
 \section{Methodology}
 This work simulates different transition scenarios to advanced reactors
 requiring \gls{HALEU} for fuel, then quantifies and compares the front-end 
-material requirements of each scenario. 
-
-Five different fuel cycle scenarios are modeled using \Cyclus \cite{huff_fundamental_2016},
-an agent based fuel cycle simulator. The first simulation models only the \glspl{LWR}
-currently deployed in the U.S. The next two simulations model no-growth 
+material requirements of each scenario. Four different fuel cycle scenarios 
+are modeled using \Cyclus \cite{huff_fundamental_2016},
+an agent based fuel cycle simulator. The first two simulations model no-growth 
 transitions to the \gls{USNC} \gls{MMR}\textsuperscript{TM} or the X-Energy 
-Xe-100\textsuperscript{TM} reactor. Then the final 
+Xe-100\textsuperscript{TM} reactor. The other  
 two simulations model a 1\% annual growth transition to either the \gls{USNC} \gls{MMR}
 or the X-Energy Xe-100 reactor. Table \ref{tab:simulations} summarizes each
 of the simulations.
@@ -19,21 +17,20 @@ of the simulations.
         \begin{tabular}{c c c}
                 \hline
                 Simulation Number & Reactors Present & Growth \\\hline
-                1 & \glspl{LWR} & N/A \\
-                2 & \glspl{LWR} and \gls{USNC} \gls{MMR} & None \\
-                3 & \glspl{LWR} and X-Energy Xe-100 reactor& None \\
-                4 & \glspl{LWR} and \gls{USNC} \gls{MMR}& 1\% \\
-                5 & \glspl{LWR} and X-Energy Xe-100 reactor& 1\% \\\hline
+                1 & \glspl{LWR} and \gls{USNC} \gls{MMR} & None \\
+                2 & \glspl{LWR} and X-Energy Xe-100 reactor& None \\
+                3 & \glspl{LWR} and \gls{USNC} \gls{MMR}& 1\% \\
+                4 & \glspl{LWR} and X-Energy Xe-100 reactor& 1\% \\\hline
 
         \end{tabular}
 \end{table}
 
-We used the \gls{IAEA} \gls{PRIS} data base \cite{noauthor_power_1989} to obtain 
+The \gls{IAEA} \gls{PRIS} data base \cite{noauthor_power_1989} supplies
 data about the currently deployed \glspl{LWR}. This database provides the 
 grid connection date of each reactor deployed, power level, and the decommission 
 date for any reactor closed down before December 2020. Any reactor still in 
 operation in December 2020 is assumed to operate for 60 years after it's 
-grid connection date. Only reactors with a power level above 400 MWe were included 
+grid connection date. Only reactors with a power level above 400 MWe are included 
 in the simulations to ensure that no research or experimental reactors are used. 
 The mass of fuel to use in the \gls{LWR} reactor cores, including the mass of 
 fuel required for each refueling, was obtained from \cite{todreas_nuclear_2012,cacuci_handbook_2010}.
@@ -123,4 +120,4 @@ The simulation uses recipes to deine the composition of each material that
 goes into or comes out of a facility. Spent \gls{LWR} fuel recipes assumes a 
 51 MWd/MTHM burnup. Spent and fresh \gls{LWR} fuel recipes were obtained 
 from \cite{yacout_visionverifiable_2006}. All other recipes capture the 
-necessary isotopic ratios of uranium, but include no other elements. 
+necessary isotopic ratios of uranium, but do not include other elements. 
