@@ -75,9 +75,14 @@ Each of the simulations model reactor deployment and operation from 1965 to
 2090, with the transition to advanced reactors beginning 
 in 2025 for the applicable scenarios. Therefore, in the no growth scenarios 
 the power demand is held constant 
-at the power produced in 2025. The \glspl{LWR} are decommissioned as described 
-above and the advanced reactors are deployed as needed to meet the prescribed 
-power demand of the scenario. 
+at the power produced in 2025. The energy demand of each transition scenario 
+(Scenarios 2-5) is modeled by either a linear (for no growth) or 
+exponential (for 1\% growth) equation defined by the \Cycamore GrowthRegion
+archetype \cite{huff_fundamental_2016}. The \glspl{LWR} are decommissioned as 
+described above using the \Cycamore DeployManagerInst archetype, and the 
+advanced reactors are deployed as needed to meet the prescribed power demand 
+of the scenario using the \Cycamore ManagerInst archetype 
+\cite{huff_fundamental_2016}.
 
 Fuel cycle facilities included in the simulations
 range from the uranium mine to the final disposal of the spent fuel. Figure 
@@ -126,3 +131,5 @@ a facility. Spent \gls{LWR} fuel recipes assumes a
 51 MWd/MTHM burnup. Spent and fresh \gls{LWR} fuel recipes were obtained 
 from \cite{yacout_visionverifiable_2006}. All other recipes capture the 
 necessary isotopic ratios of uranium, but do not include other elements. 
+Enrichment feed recipes assume natural uranium is used, and the tails assay 
+is 0.2\%. 
