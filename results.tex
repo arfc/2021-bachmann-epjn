@@ -21,14 +21,17 @@ in 2025.
     \label{fig:energy_rx_1}
 \end{figure}
 
-The next result is the mass of uranium sent to the \glspl{LWR} to fuel 
+The next result is the mass of uranium sent to the \glspl{LWR} at each 
+time step to fuel 
 them, as shown in Figure \ref{fig:fuel_1}. Each of the \glspl{LWR} are 
 defined to have an 18 month cycle length, with a third of the uranium 
-mass replaced at each refueling outage. However, each when a new reactor 
+mass replaced at each refueling outage. However, when a new reactor 
 is deployed, it is deployed with an entire core of uranium which leads 
 to the large increases in the mass of urnaium sent to the reactors, such 
 as what is observed in 1983 and 2016. A maximum of 513.7 MT of uranium 
-is required at one time for this scenario.
+is required at one time for this scenario and an average of 96.2 MT/month 
+of uranium is sent to the \glspl{LWR}. Prior to 2025, the average mass
+of uranium sent to the \glspl{LWR} is 157.6 MT/month. 
 
 \begin{figure}
     \centering 
@@ -52,11 +55,10 @@ required for this scenario.
     \label{fig:swu_1}
 \end{figure}
 
-
-Each of the metrics from this scenario, the \gls{LWR} deployment schedule, 
-energy supplied by them, uranium mass used to fuel the \glspl{LWR}, and the 
-\gls{SWU} capacity needed to produce their fuel are the same for each of 
-the other scenarios. 
+The deployment schedule of the \glspl{LWR} in this scenario is 
+applied to each of the other scenarios, and therefore the material 
+requirements of each of the following scenarios is the same as those 
+of this scenario prior to 2025. 
 
 \subsection{Scenario 2}
 The energy produced by each type of reactor, the transition energy demand, 
@@ -258,6 +260,18 @@ of \glspl{MMR} deployed is 17656.
     \label{fig:fuel_4}
 \end{figure}
 
+Figure \ref{fig:swu_4} shows the \gls{SWU} capacity required to 
+enrich uranium for all of the reactors in the scenario and the 
+\gls{SWU} capacity to enrich uranium only for the \glspl{MMR} in 
+the scenario. The \gls{SWU} capacity required to enrich uranium 
+for the \glspl{MMR} is much higher than the capacity required to 
+enrich uranium for the \glspl{LWR} in the scenario because
+the \glspl{MMR} require a much higher mass of enriched uranium 
+and a higher enrichment level. An average of 2.19$\times 10^6$ 
+kg-\gls{SWU}/month is required to enrich uranium for the \glspl{MMR}
+in this scenario, and a maximum of 2.15$\times 10^7$ kg-\gls{SWU}
+is required to enrich the uranium that is sent to \glspl{MMR} at 
+a single timestep. 
 
 \begin{figure}
     \centering
@@ -269,7 +283,7 @@ of \glspl{MMR} deployed is 17656.
     \end{subfigure}
     \begin{subfigure}{0.4\textwidth}
         \centering
-        \includegraphics[scale=0.3]{figures/advancedRX_fuelsupply_scenarios_4.png}
+        \includegraphics[scale=0.3]{figures/haleuSWU_scenarios_4.png}
         \caption{\gls{SWU} required to enrich uranium sent to \glspl{MMR} at each time step.}
         \label{fig:haleuswu_4}
     \end{subfigure}
@@ -317,6 +331,21 @@ reactors deployed in the scenario is 2361.
     \label{fig:fuel_5}
 \end{figure}
 
+Finally, Figure \ref{fig:swu_5} shows the \gls{SWU} capacity required
+to enrich the uranium sent to all of the reactors and just the Xe-100
+reactors in the scenario at each time step. The \gls{SWU} capacity needed 
+to enrich uranium for the Xe-100 reactors starts out at a similar 
+amount to what is needed to enrich uranium for the \glspl{LWR}, but 
+increases as the eenrgy demand and the number of reactors increases 
+in the sceanrio. The \gls{SWU} capacity required to enrich uranium 
+for the Xe-100 reactors becomes higher than the \gls{SWU} capacity 
+required to enrich uranium for \glspl{LWR} despite the Xe-100 
+reactors requiring a lower mass of uranium because of the higher 
+enrichment level of the fuel. An average of 1.36$\times 10^6$ 
+kg-\gls{SWU}/month is required 
+to enrich uranium for the Xe-100 reactors, and a maximum of 
+4.11$\times 10^6$ kg-\gls{SWU} is required to enrich the uranium sent to the 
+Xe-100 reactors at one time step. 
 
 \begin{figure}
     \centering
@@ -328,7 +357,7 @@ reactors deployed in the scenario is 2361.
     \end{subfigure}
     \begin{subfigure}{0.4\textwidth}
         \centering
-        \includegraphics[scale=0.3]{figures/advancedRX_fuelsupply_scenarios_5.png}
+        \includegraphics[scale=0.3]{figures/haleuSWU_scenarios_5.png}
         \caption{\gls{SWU} required to enrich uranium sent to Xe-100s at each time step.}
         \label{fig:haleuswu_5}
     \end{subfigure}
