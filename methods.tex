@@ -3,7 +3,7 @@ This work simulates multiple transition scenarios to advanced reactors
 requiring \gls{HALEU} for fuel, then quantifies and compares the front-end 
 material requirements of each scenario. Five different fuel cycle scenarios 
 are modeled using \Cyclus \cite{huff_fundamental_2016};
-an open source, agent-based fuel cycle simulator. The first scenario models 
+an open-source, agent-based fuel cycle simulator. The first scenario models 
 only the \glspl{LWR} that are deployed in the United States, and provides 
 a reference for comparison of the material requirements of the transitions. 
 The next two scenarios model no-growth 
@@ -38,11 +38,11 @@ operation in December 2020 is assumed to operate for 60 years after its
 grid connection date. Only reactors with a power level above 400 MWe are included 
 to ensure that no research or experimental reactors are used. 
 The mass of fuel in the \gls{LWR} reactor cores, including the mass  
-required for each refueling, was obtained from supplementary soources 
+required for each refueling, was obtained from supplementary sources 
 \cite{todreas_nuclear_2012,cacuci_handbook_2010}.
 All \glspl{LWR} are assumed to have an 18 month cycle length. 
 
-We used a variety of open source documents to obtain data about the advanced reactors
+We used a variety of open-source documents to obtain data about the advanced reactors
 \cite{mitchell_usnc_2020, harlan_x-energy_2018, hussain_advances_2018}. 
 This includes 
 the power output, enrichment level, fuel form, reactor lifetime, fuel 
@@ -81,7 +81,7 @@ the power demand is held constant
 at the power produced in 2025. The energy demand of each transition scenario 
 (Scenarios 2-5) is modeled by either a linear (for no growth) or 
 exponential (for 1\% growth) equation defined by the \Cycamore GrowthRegion
-archetype \cite{huff_fundamental_2016}. The \glspl{LWR} are depoyed 
+archetype \cite{huff_fundamental_2016}. The \glspl{LWR} are deployed 
 using the \Cycamore DeployManagerInst archetype, and the 
 advanced reactors are deployed as needed to meet the prescribed power demand 
 of the scenario using the \Cycamore ManagerInst archetype 
@@ -134,5 +134,5 @@ fuel recipes were obtained from \cite{yacout_visionverifiable_2006}.
 The spent \gls{LWR} fuel 
 recipe assumes a 51 MWd/kg-U burnup. All other recipes capture the 
 necessary isotopic ratios of uranium, but do not include other elements. 
-The enrichment feed recipe assume natural uranium is used, and the tails 
+The enrichment feed recipe assumes natural uranium is used, and the tails 
 assay is 0.2\%. 
