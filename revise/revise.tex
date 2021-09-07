@@ -95,9 +95,9 @@
 
 
 \usepackage[acronym,toc]{glossaries}
-\include{acros}
+%\include{acros}
 
-\makeglossaries
+%\makeglossaries
 
 %\journal{Annals of Nuclear Energy}
 
@@ -126,9 +126,9 @@
 % \address{Address\fnref{label3}}
 % \fntext[label3]{}
 
-\title{A Simple, Concise Article Title\\
+\title{Enrichment dynamics for advanced reactor HALEU support\\
         \large Response to Review Comments}
-\author{Firstname M. Lastname, John S. Doe, Jane S. Doe}
+\author{Amanda M. Bachmann, Kathryn D. Huff, Madicken Munk}
 
 % use optional labels to link authors explicitly to addresses:
 % \author[label1,label2]{<author name>}
@@ -154,13 +154,52 @@ paper.
 \begin{questions}
 
         %---------------------------------------------------------------------
-        \question The color scheme in figures 4 and 7 make it difficult to
-        distinguish each individual components in the figures.
+        \question This paper look at a original problem et gives some 
+        interesting insight allowing to reveal specific problems to be resolved, 
+        notably the peak in SWU needed with the new HTGRs. However in its 
+        current form it does not really explore the consequences of the problem 
+        and does not gives any indication of direction suitable to solve this 
+        problem which makes it quite lacking in valuable new information.
+        In this current form the interest of the paper is limited, but if this 
+        consequences and ideas for potential solutions would greatly increase 
+        the interest of this paper. The main point that would profit for this 
+        kind of work is the peak of SWU demand during the simulation wwith MMR 
+        and Xe-100. In the simulation presented, huge peak of SWU are scattered 
+        in the middle of time period where the demand is far lower. This kind of 
+        peak seems to ask for a massive oversizing of the enrichment facilities 
+        that would be industrially unrealistic. This difficulty should be 
+        aknowledged in the paper. Some remediation technic to decrease the 
+        size of the enrichment facility and increase its utilization rates seems 
+        possible :
+        \begin{itemize}
+                \item preparing some of the fuel in advance to smooth the production
+                \item downblend HEU during the peak of demand 
+        \end{itemize}
+        The paper should aknowledge them and explain why they are adapated or 
+        not in the considered situation and what are the obstacle for their 
+        implementation in the simulation.
+        \begin{solution}
+                
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question The second discussion option would also address another problem 
+        with the paper : downblending of HEU into HALEU is mentionned quite a lot 
+        in the introduction of the paper and is presented as a mean to decrease 
+        the need in enrichment but is never mentionned in the part about the actual 
+        simulation work. This disconnection make the introduction feel out of place.
+        I recommend either discuss more how downblending of HEU can help in the 
+        situation considered or remove the mentiong about downblending in the 
+        introduction.
+        \begin{solution}
+                
+        \end{solution}
+        
+        %---------------------------------------------------------------------
+        \question Finally, a more comestic remark, the inclusion of the figures inside the main body of the paper would greatly help the readability.
 
         \begin{solution}
-        	Thank you for your valuable input. We changed the color scheme
-        	to ensure that the colors representing each component are more
-        	distinct and easier to tell apart.
+        	
 
         \end{solution}
 
@@ -171,8 +210,33 @@ paper.
 
         \end{solution}
 
+\end{questions}
+
+\section*{Reviewer 2}
+\begin{questions}
+        %---------------------------------------------------------------------
+        \question In order to improve the comparisons, I suggest to add 
+        cumulative values and to compare the 5 scenarios together via dedicated 
+        figures.
+        \begin{solution}
+                
+        \end{solution}
 
         %---------------------------------------------------------------------
+        \question More information on the reactors design may also be useful 
+        for the readers.
+        \begin{solution}
+                
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Maybe adding a description of the CYCLUS code and of the way 
+        the Systems have been modeled on it (e.g. preparation of appropriate 
+        neutronic data, e.g. effective XS, etc.) can also be useful.
+        \begin{solution}
+                
+        \end{solution}
+
 \end{questions}
 \bibliographystyle{unsrt}
 \bibliography{revise}
