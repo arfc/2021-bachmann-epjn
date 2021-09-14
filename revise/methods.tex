@@ -3,7 +3,11 @@ This work simulates multiple transition scenarios to advanced reactors
 requiring \gls{HALEU} for fuel, then quantifies and compares the front-end 
 material requirements of each scenario. Five different fuel cycle scenarios 
 are modeled using \Cyclus \cite{huff_fundamental_2016};
-an open-source, agent-based fuel cycle simulator. The first scenario models 
+an open-source, agent-based fuel cycle simulator. \Cyclus defines facilities, 
+institutions, and regions as agents within a fuel cycle simulation and models 
+material transactions between agents according to a dynamic resource exchange. 
+
+The first scenario models 
 only the \glspl{LWR} that are deployed in the United States, and provides 
 a reference for comparison of the material requirements of the transitions. 
 The next two scenarios model no-growth 
@@ -81,11 +85,15 @@ the power demand is held constant
 at the power produced in 2025. The energy demand of each transition scenario 
 (Scenarios 2-5) is modeled by either a linear (for no growth) or 
 exponential (for 1\% growth) equation defined by the \Cycamore GrowthRegion
-archetype \cite{huff_fundamental_2016}. The \glspl{LWR} are deployed 
+archetype \cite{huff_fundamental_2016}, which determines if additional 
+facilities are required to meet the specified demand. The \glspl{LWR} are deployed 
 using the \Cycamore DeployManagerInst archetype, and the 
 advanced reactors are deployed as needed to meet the prescribed power demand 
 of the scenario using the \Cycamore ManagerInst archetype 
-\cite{huff_fundamental_2016}.
+\cite{huff_fundamental_2016}. The \Cycamore DeployManagerInst deploys facilities 
+according to a manually descriped schedule, and each facility deployed is 
+recognized as part of the \Cycamore GrowthRegion and how each facility contributes 
+to the specified capacity of the scenario. 
 
 The scenarios model the fuel cycle from the uranium mine to the final 
 disposal of the fuel in the HLW Sink.  Figure 
