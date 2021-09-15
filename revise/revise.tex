@@ -99,6 +99,9 @@
 
 \makeglossaries
 
+\newcommand{\Cyclus}{\textsc{Cyclus}\xspace}%
+\newcommand{\Cycamore}{\textsc{Cycamore}\xspace}%
+
 %\journal{Annals of Nuclear Energy}
 
 \begin{document}
@@ -182,13 +185,7 @@ paper.
                 Thank you for the comment. This is certainly an important aspect of 
                 this work to investigate. A short discussion of this has been added 
                 to the results section of the paper, Section 3.6, on the importance 
-                of such analysis. However, a full investigation into this has been 
-                determined to be outside the scope of this work because the 
-                results reported are based on the uranium sent to reactors at each 
-                time step, and not based on the production of the enrichment 
-                facility at each time step. The suggestion of such an investigation 
-                has been added to the Future Work discussion in the Conclusions 
-                Section. Secction 4.1. 
+                of such analysis
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -237,7 +234,13 @@ paper.
         \question More information on the reactors design may also be useful 
         for the readers.
         \begin{solution}
-                Thank you for the comment. 
+                Thank you for the comment. The information provided about the reactors 
+                is sufficient to re-create the \Cyclus inputs used for this work.
+                The \Cyclus input files use recipes to define each material used, 
+                therefore the total mass of uranium and the enrichment level 
+                required by the reactors is sufficient information. Therefore, 
+                additional information about the reactors was not added to the 
+                paper. 
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -245,7 +248,10 @@ paper.
         the Systems have been modeled on it (e.g. preparation of appropriate 
         neutronic data, e.g. effective XS, etc.) can also be useful.
         \begin{solution}
-                Thank you for the comment. The material recipes that have been used 
+                Thank you for the comment. A short description of \Cyclus and the 
+                regions and isntitutions used in the scenarios has 
+                been added to the Methods section (Section 2). 
+                The material recipes that have been used 
                 in the simulations were generated to reflect the urnaium isotopic 
                 composition in the specified commodity (e.g. fresh UOX fuel), with 
                 the exception of the spent \gls{LWR} fuel. The recipe for the spent 
