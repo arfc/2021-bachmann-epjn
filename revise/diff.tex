@@ -402,7 +402,12 @@ This work simulates multiple transition scenarios to advanced reactors
 requiring \gls{HALEU} for fuel, then quantifies and compares the front-end 
 material requirements of each scenario. Five different fuel cycle scenarios 
 are modeled using \Cyclus \cite{huff_fundamental_2016};
-an open-source, agent-based fuel cycle simulator. The first scenario models 
+an open-source, agent-based fuel cycle simulator. \DIFaddbegin \Cyclus \DIFadd{defines facilities, 
+institutions, and regions as agents within a fuel cycle simulation and models 
+material transactions between agents according to a dynamic resource exchange. 
+}
+
+\DIFaddend The first scenario models 
 only the \glspl{LWR} that are deployed in the United States, and provides 
 a reference for comparison of the material requirements of the transitions. 
 The next two scenarios model no-growth 
@@ -480,11 +485,16 @@ the power demand is held constant
 at the power produced in 2025. The energy demand of each transition scenario 
 (Scenarios 2-5) is modeled by either a linear (for no growth) or 
 exponential (for 1\% growth) equation defined by the \Cycamore GrowthRegion
-archetype \cite{huff_fundamental_2016}. The \glspl{LWR} are deployed 
+archetype \cite{huff_fundamental_2016}\DIFaddbegin \DIFadd{, which determines if additional 
+facilities are required to meet the specified demand}\DIFaddend . The \glspl{LWR} are deployed 
 using the \Cycamore DeployManagerInst archetype, and the 
 advanced reactors are deployed as needed to meet the prescribed power demand 
 of the scenario using the \Cycamore ManagerInst archetype 
-\cite{huff_fundamental_2016}.
+\cite{huff_fundamental_2016}. \DIFaddbegin \DIFadd{The }\Cycamore \DIFadd{DeployManagerInst deploys facilities 
+according to a manually descriped schedule, and each facility deployed is 
+recognized as part of the }\Cycamore \DIFadd{GrowthRegion and how each facility contributes 
+to the specified capacity of the scenario. 
+}\DIFaddend 
 
 The scenarios model the fuel cycle from the uranium mine to the final 
 disposal of the fuel in the HLW Sink.  Figure 
@@ -572,9 +582,9 @@ to the large increases in the mass of uranium sent to the reactors, such
 as in 1983 and 2016. An average of 96.2 MTU/month and a maximum of 513.7 MTU 
 are sent to the \glspl{LWR}. Prior to 2025, the average mass
 of enriched uranium sent to the \glspl{LWR} is 157.6 MTU/month. \DIFaddbegin \DIFadd{A total 
-of 144334.6 MT of uranium are sent to \mbox{%DIFAUXCMD
+of 30,635.0 MTU are sent to \mbox{%DIFAUXCMD
 \glspl{LWR} }\hspace{0pt}%DIFAUXCMD
-in this scenario. 
+after 2025 in this scenario. 
 }\DIFaddend 
 
 \begin{figure}
@@ -593,8 +603,17 @@ is calculated based on those transactions. An average of 0.74$\times 10^6$
 kg-\gls{SWU}/month and a maximum of 3.95$\times 10^6$ kg-\gls{SWU} are 
 required for this scenario. Prior to 2025, an average of 1.21$\times 10^6$ 
 kg-\gls{SWU}/month is required to enrich the uranium sent to the \glspl{LWR}.
-\DIFaddbegin \DIFadd{A total of 11.1$\times 10^8$ kg-SWU are required to enrich uranium for the 
-reactors in this scenario.
+\DIFaddbegin \DIFadd{After 2025, an average of 0.302$\times 10^6$ kg-\mbox{%DIFAUXCMD
+\gls{SWU} }\hspace{0pt}%DIFAUXCMD
+is required to 
+enrich the uranium sent to the \mbox{%DIFAUXCMD
+\glspl{LWR}}\hspace{0pt}%DIFAUXCMD
+.
+A total of 11.1$\times 10^8$ kg-SWU are required to enrich uranium for the 
+reactors in this scenario, and a toal of 2.36$\times 10^8$ kg-SWU is required 
+to enrich uranium sent to \mbox{%DIFAUXCMD
+\glspl{LWR} }\hspace{0pt}%DIFAUXCMD
+after 2025. 
 }\DIFaddend 
 
 \begin{figure}
@@ -656,7 +675,7 @@ of 781.41 MTU are sent to all of the reactors in the scenario after 2025.
 This average is lower than the average mass of enriched uranium 
 sent to the \glspl{LWR} in Scenario 1, but the maximum exceeds the maximum 
 mass of enriched uranium sent to \glspl{LWR} in Scenario 1 by 267.71 MT.
-An average of 48.50 MTU/month and a maximum of 719.25 
+An average of \DIFdelbegin \DIFdel{48.50 }\DIFdelend \DIFaddbegin \DIFadd{73.12 }\DIFaddend MTU/month and a maximum of 719.25 
 MTU are sent to the \glspl{MMR} once they are deployed in 2031. The average 
 mass of enriched uranium sent to the 
 \glspl{MMR} is lower than the average mass of uranium sent to the \glspl{LWR}
@@ -665,9 +684,11 @@ than
 average mass sent to the \glspl{LWR}. The lower average is explained by the 
 multiple time periods in 
 which no \gls{HALEU} is sent to the \glspl{MMR} due to the lack of refueling.
-\DIFaddbegin \DIFadd{A total of 195447.3 MTU are sent to all of the reactors and 
-33999.9 MTU are sent to the advanced reactor in this 
-scenario. 
+\DIFaddbegin \DIFadd{A total of 81,747.7 MTU are sent to all of the reactors after 2025 and 
+51,112.7 MTU are sent to the advanced reactor in this 
+scenario. These totals show that most of the uranium produced after 2025 is 
+for use an the advanced reactors, which is consistent with the reactor 
+deployment and decommissioning schedule. 
 }\DIFaddend 
 
 \begin{figure}
@@ -689,7 +710,7 @@ scenario.
         \DIFaddendFL \caption{Mass of enriched uranium sent to \glspl{MMR}.}
         \label{fig:haleu_2}
     \end{subfigure}
-    \caption{Uranium mass sent to reactors in Scenario 2.}
+    \caption{\DIFdelbeginFL \DIFdelFL{Uranium }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Enriched uranium }\DIFaddendFL mass sent to reactors in Scenario 2.}
     \label{fig:fuel_2}
 \end{figure}
 
@@ -698,14 +719,27 @@ enrich uranium for all reactors in the scenario, and to enrich uranium for
 just the \glspl{MMR}. There is a large difference in the \gls{SWU} 
 capacity needed to enrich uranium for \glspl{LWR} and \glspl{MMR}. This 
 is because the \glspl{MMR} require a much larger mass and 
-a higher enrichment level. An average of 1.37$\times 10^6$ kg-\gls{SWU}/month
+a higher enrichment level. An average of \DIFdelbegin \DIFdel{1.37}\DIFdelend \DIFaddbegin \DIFadd{2.07}\DIFaddend $\times 10^6$ kg-\gls{SWU}/month
 and a maximum of 20.3$\times 10^6$ kg-\gls{SWU}
 are needed to enrich the uranium sent to \glspl{MMR}. These values are both 
 higher than the 
 average and maximum \gls{SWU} capacity needed to enrich fuel for the 
-\glspl{LWR} in Scenario 1. \DIFaddbegin \DIFadd{A total of 18.9$\times 10^8$ kg-SWU and 9.61$\times 
-10^8$ kg-SWU are required to enrich uranium for all reactors and for 
-the advanced reactors in the scenario, respectively. 
+\glspl{LWR} in Scenario 1. \DIFaddbegin \DIFadd{A total of 16.8$\times 10^8$ kg-SWU and 14.4$\times 
+10^8$ kg-SWU are required to enrich uranium for all reactors after 2025 and for 
+the advanced reactors in the scenario, respectively. Enriching uranium for the 
+\mbox{%DIFAUXCMD
+\glspl{MMR} }\hspace{0pt}%DIFAUXCMD
+requires a larger \mbox{%DIFAUXCMD
+\gls{SWU} }\hspace{0pt}%DIFAUXCMD
+capacity than enriching uranium for the 
+all \mbox{%DIFAUXCMD
+\glspl{LWR} }\hspace{0pt}%DIFAUXCMD
+in the scenario despite the larger mass of enriched uranium required 
+by the \mbox{%DIFAUXCMD
+\glspl{LWR} }\hspace{0pt}%DIFAUXCMD
+because the \mbox{%DIFAUXCMD
+\glspl{MMR} }\hspace{0pt}%DIFAUXCMD
+require a higher enrichment level. 
 }\DIFaddend 
 
 \begin{figure}
@@ -766,13 +800,15 @@ is sent to the Xe-100 reactors every six months in the simulations,
 while it is sent to the \glspl{LWR} every 18 months. An average of 
 74.98 MTU/month and a maximum of 342.58 MTU are sent to all of the reactors 
 in this scenario starting in 2025. Both values are much
-lower than in Scenario 1. An average of 23.81 
-MTU/month and a maximum of 105.67 MTU are sent to the Xe-100 reactors in 
+lower than in Scenario 1. An average of \DIFdelbegin \DIFdel{23.81 
+}\DIFdelend \DIFaddbegin \DIFadd{39.74 
+}\DIFaddend MTU/month and a maximum of 105.67 MTU are sent to the Xe-100 reactors in 
 this scenario. Each of these numbers are lower than the 
 average and maximum masses of enriched uranium  
 in Scenario 1, and the \gls{HALEU} mass sent to the \glspl{MMR} in 
-Scenario 2. \DIFaddbegin \DIFadd{A total of 172109.7 MTU and 16692.9 MTU are sent to 
-all reactors and the advanced reactors in the scenario, respectively, showing
+Scenario 2. \DIFaddbegin \DIFadd{A total of 58,410.1 MTU and 27,775.1 MTU are sent to 
+all reactors after 2025 and the advanced reactors in the scenario, respectively, 
+showing
 that this transition scenario requires less uranium than Scenario 2. 
 }\DIFaddend 
 
@@ -795,7 +831,7 @@ that this transition scenario requires less uranium than Scenario 2.
         \DIFaddendFL \caption{Mass of enriched uranium sent to Xe-100s.}
         \label{fig:haleu_3}
     \end{subfigure}
-    \caption{Uranium mass sent to reactors in Scenario 3.}
+    \caption{\DIFdelbeginFL \DIFdelFL{Uranium }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Enriched uranium }\DIFaddendFL mass sent to reactors in Scenario 3.}
     \label{fig:fuel_3}
 \end{figure}
 
@@ -807,10 +843,10 @@ despite the higher enrichment level of uranium
 sent to the Xe-100 reactors. This is because the Xe-100 reactors receive 
 a lower average mass of enriched uranium at each time step. Enriching uranium 
 for the Xe-100 reactors requires an average of 
-0.82$\times 10^6$ kg-\gls{SWU}/month and a maximum of 3.64$\times 10^6$
-kg-\gls{SWU}. \DIFaddbegin \DIFadd{A total of 15.1$\times 10^8$ kg-SWU and 5.75$\times 10^8$
+\DIFdelbegin \DIFdel{0.82}\DIFdelend \DIFaddbegin \DIFadd{1.37}\DIFaddend $\times 10^6$ kg-\gls{SWU}/month and a maximum of 3.64$\times 10^6$
+kg-\gls{SWU}. \DIFaddbegin \DIFadd{A total of 11.9$\times 10^8$ kg-SWU and 9.57$\times 10^8$
 kg-SWU are required 
-to enrich uranium for all reactors and the advanced reactors in the 
+to enrich uranium for all reactors after 2025 and the advanced reactors in the 
 scenario, respectively. 
 }\DIFaddend 
 
@@ -864,7 +900,7 @@ Figure \ref{fig:fuel_4} shows the mass of enriched uranium sent to all the
 reactors in the scenario, and to just the \glspl{MMR} 
 in the scenario. An average of 144.36 MTU/month and a maximum of 796.71 MTU
 are sent to all the reactors starting in 2025 in this scenario. An average of 
-75.62 MTU/month and a maximum of 755.60 MTU are sent to just the \glspl{MMR}
+\DIFdelbegin \DIFdel{75.62 }\DIFdelend \DIFaddbegin \DIFadd{113.64 }\DIFaddend MTU/month and a maximum of \DIFdelbegin \DIFdel{755.60 }\DIFdelend \DIFaddbegin \DIFadd{782.38 }\DIFaddend MTU are sent to just the \glspl{MMR}
 in the scenario once they are deployed. The mass of \gls{HALEU}
 required by the \glspl{MMR} in this scenario is higher than  
 in Scenario 2 due to the higher energy 
@@ -872,8 +908,8 @@ demand and the additional \glspl{MMR} deployed. The
 average mass of \gls{HALEU} sent to the \glspl{MMR} in this scenario is 
 slightly lower than the average mass sent to the \glspl{LWR} in Scenario 1 
 due to the multiple time steps in which no uranium is sent to the \glspl{MMR}.
-\DIFaddbegin \DIFadd{A total of 226153.2 MTU and 54443.0 MTU are required for all of the 
-reactors and the advanced reactors in the scenario, respectively. 
+\DIFaddbegin \DIFadd{A total of 112,453.6 MTU and 81,818.6 MTU are required for all of the 
+reactors after 2025 and the advanced reactors in the scenario, respectively. 
 }\DIFaddend 
 
 \begin{figure}
@@ -895,7 +931,7 @@ reactors and the advanced reactors in the scenario, respectively.
         \DIFaddendFL \caption{Mass of enriched uranium sent to \glspl{MMR}.}
         \label{fig:haleu_4}
     \end{subfigure}
-    \caption{Uranium mass sent to reactors in Scenario 4.}
+    \caption{\DIFdelbeginFL \DIFdelFL{Uranium }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Enriched uranium }\DIFaddendFL mass sent to reactors in Scenario 4.}
     \label{fig:fuel_4}
 \end{figure}
 
@@ -904,15 +940,15 @@ enrich uranium for all the reactors in the scenario, and
 only for the \glspl{MMR}. For the same reasons described for 
 Scenario 2, the \gls{SWU} capacity required to enrich uranium 
 for the \glspl{MMR} is much higher than the capacity needed to 
-enrich uranium for the \glspl{LWR}. An average of 2.19$\times 10^6$ 
-kg-\gls{SWU}/month and a maximum of 21.5$\times 10^6$ kg-\gls{SWU}
+enrich uranium for the \glspl{LWR}. An average of \DIFdelbegin \DIFdel{2.19}\DIFdelend \DIFaddbegin \DIFadd{3.21}\DIFaddend $\times 10^6$ 
+kg-\gls{SWU}/month and a maximum of \DIFdelbegin \DIFdel{21.5}\DIFdelend \DIFaddbegin \DIFadd{22.1}\DIFaddend $\times 10^6$ kg-\gls{SWU}
 are required to enrich the uranium that is sent to \glspl{MMR}. These values 
 are higher than the \gls{SWU} 
 capacity required to enrich uranium for the \glspl{MMR} in 
 Scenario 2. The average is slightly higher than the average \gls{SWU} 
 capacity required to enrich uranium for the \glspl{LWR} before 2025 in 
-Scenario 1. \DIFaddbegin \DIFadd{A total of 24.8$\times 10^8$ kg-SWU and 15.4$\times 10^8$
-kg-SWU are required to enrich uranium for all reactors and the advanced 
+Scenario 1. \DIFaddbegin \DIFadd{A total of 25.5$\times 10^8$ kg-SWU and 23.1$\times 10^8$
+kg-SWU are required to enrich uranium for all reactors after 2025 and the advanced 
 reactors in the scenario, respectively. 
 }\DIFaddend 
 
@@ -974,10 +1010,10 @@ the scenario. An average of 95.46 MTU/month and a maximum of 347.28 MTU
 are sent to all of the reactors in this scenario after 2025. These 
 values are both lower than the uranium mass sent to the 
 \glspl{LWR} in Scenario 1. An average of 
-38.11 MTU/month and a maximum of 117.98 MTU are sent to the Xe-100 reactors. 
+\DIFdelbegin \DIFdel{38.11 }\DIFdelend \DIFaddbegin \DIFadd{60.73 }\DIFaddend MTU/month and a maximum of \DIFdelbegin \DIFdel{117.98 }\DIFdelend \DIFaddbegin \DIFadd{123.80 }\DIFaddend MTU are sent to the Xe-100 reactors. 
 These metrics are all much lower than what is observed 
-for fueling the \glspl{MMR} in Scenario 4. \DIFaddbegin \DIFadd{A total of 188061.4 MTU and 
-27439.8 MTU are required to fuel all reactors and the advanced reactors 
+for fueling the \glspl{MMR} in Scenario 4. \DIFaddbegin \DIFadd{A total of 74,361.76 MTU and 
+43,726.74 MTU are required to fuel all reactors after 2025 and the advanced reactors 
 in the scenario, respectively.
 }\DIFaddend 
 
@@ -989,7 +1025,7 @@ in the scenario, respectively.
         \DIFdelbeginFL %DIFDELCMD < \includegraphics[scale=0.5]{figures/fuelsupply_scenarios_5.png}
 %DIFDELCMD <         %%%
 \DIFdelendFL \DIFaddbeginFL \includegraphics[scale=0.5]{../figures/fuelsupply_scenarios_5.png}
-        \DIFaddendFL \caption{Mass of enriche uranium sent to all reactors.}
+        \DIFaddendFL \caption{Mass of \DIFdelbeginFL \DIFdelFL{enriche }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{enriched }\DIFaddendFL uranium sent to all reactors.}
         \label{fig:totalfuel_5}
     \end{subfigure}
     \hspace{0.8cm}
@@ -1001,7 +1037,7 @@ in the scenario, respectively.
         \DIFaddendFL \caption{Mass of enriched uranium sent to Xe-100s.}
         \label{fig:haleu_5}
     \end{subfigure}
-    \caption{Uranium mass sent to reactors in Scenario 5.}
+    \caption{\DIFdelbeginFL \DIFdelFL{Uranium }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Enriched uranium }\DIFaddendFL mass sent to reactors in Scenario 5.}
     \label{fig:fuel_5}
 \end{figure}
 
@@ -1016,16 +1052,16 @@ for the Xe-100 reactors becomes higher than the capacity
 required to enrich uranium for \glspl{LWR}, despite the Xe-100 
 reactors requiring a lower mass of uranium. This is due to the higher 
 enrichment level of the fuel for the Xe-100 reactors. An average of 
-1.36$\times 10^6$ kg-\gls{SWU}/month and a maximum of 
-4.11$\times 10^6$ kg-\gls{SWU} are required to enrich the uranium sent 
+\DIFdelbegin \DIFdel{1.36}\DIFdelend \DIFaddbegin \DIFadd{2.09}\DIFaddend $\times 10^6$ kg-\gls{SWU}/month and a maximum of 
+\DIFdelbegin \DIFdel{4.11}\DIFdelend \DIFaddbegin \DIFadd{4.26}\DIFaddend $\times 10^6$ kg-\gls{SWU} are required to enrich the uranium sent 
 to the Xe-100 reactors. The average \gls{SWU} capacity 
 required to enrich uranium for the Xe-100 reactors is a little lower 
 than the average capacity needed to enrich uranium for the \glspl{MMR}
 in Scenario 4, but the maximum capacity required for this scenario is much 
 lower than in Scenario 4. These values are slightly higher 
 than what is observed to enrich uranium for the \glspl{LWR} in Scenario 1
-prior to 2025. \DIFaddbegin \DIFadd{A total of 18.8$\times 10^8$ kg-SWU and 9.46$\times 10^8$
-kg-SWU are required to enrich uranium for all reactors and the advanced 
+prior to 2025. \DIFaddbegin \DIFadd{A total of 17.4$\times 10^8$ kg-SWU and 15.1$\times 10^8$
+kg-SWU are required to enrich uranium for all reactors after 2025 and the advanced 
 reactors in the scenario.  
 }\DIFaddend 
 
@@ -1053,31 +1089,67 @@ reactors in the scenario.
 \end{figure}
 
 \DIFaddbegin \subsection{\DIFadd{Scenario comparisons}}
-\DIFadd{The mass of uranium sent to all reactors 
-}\begin{figure}
+\DIFadd{The mass of uranium sent to all reactors for each scenario and to just the 
+advanced reactors is shown in Figure \ref{fig:fuel_all}. There is a 
+large difference in the mass of uranium required at each time step when the Xe-100
+is deployed in Scenarios 3 and 5 compared to the mass of uranium required at each 
+time step when the \mbox{%DIFAUXCMD
+\gls{MMR} }\hspace{0pt}%DIFAUXCMD
+is deployed in Scenarios 2 and 4. For the time 
+steps at which the \mbox{%DIFAUXCMD
+\glspl{MMR} }\hspace{0pt}%DIFAUXCMD
+receive fuel (134, 181 occurences), the difference present 
+is on the order of 0.03-682 MTU at a single time step for the no growth scenarios and 
+between 0.30-696 MTU for the 1\% growth scenarios. There are 328, 298 time steps 
+in Scenarios 2 and 4 in which uranium is not sent to the \mbox{%DIFAUXCMD
+\glspl{MMR}}\hspace{0pt}%DIFAUXCMD
+. At these time 
+steps, the Xe-100 reactors receive between 0.67-48.8 MTU and 0.59-452.6 MTU more uranium 
+in the no growth and 1\% growth scenarios, respectively. 
+}
+
+
+\begin{figure}
     \centering
     \begin{subfigure}{0.5\textwidth}
         \centering
         \includegraphics[scale=0.5]{../figures/fuelsupply_scenarios_all.png}
-        \caption{\DIFaddFL{Total \mbox{%DIFAUXCMD
-\gls{SWU} }\hspace{0pt}%DIFAUXCMD
-required to enrich uranium sent to all reactors at each time step.}}
+        \caption{\DIFaddFL{Total uranium mass sent to all reactors at each time step.}}
         \label{fig:totalfuel_all}
     \end{subfigure}
     \DIFaddFL{\hspace{0.8cm}
     }\begin{subfigure}{0.5\textwidth}
         \centering
         \includegraphics[scale=0.5]{../figures/advancedRX_fuelsupply_scenarios_2-5.png}
-        \caption{\DIFaddFL{\mbox{%DIFAUXCMD
-\gls{SWU} }\hspace{0pt}%DIFAUXCMD
-required to enrich uranium sent to Xe-100s at each time step.}}
+        \caption{\DIFaddFL{Uranium mass sent to advanced reactors at each time step.}}
         \label{fig:haleufuel_all}
     \end{subfigure}
-    \caption{\DIFaddFL{\mbox{%DIFAUXCMD
-\gls{SWU} }\hspace{0pt}%DIFAUXCMD
-required to enrich natural uranium in Scenario 5.}}
+    \caption{\DIFaddFL{Uranium mass supplied to reactors in all scenarios.}}
     \label{fig:fuel_all}
 \end{figure}
+
+\DIFadd{Figure \ref{fig:swu_all} compares the \mbox{%DIFAUXCMD
+\gls{SWU} }\hspace{0pt}%DIFAUXCMD
+capacity required to enrich uranium for 
+all reactors and the advanced reactors in each scenario. The \mbox{%DIFAUXCMD
+\gls{SWU} }\hspace{0pt}%DIFAUXCMD
+capacity required 
+to enrich urnaium in Scenarios 1, 3, and 5 are similar in magnitude, but Scenarios 2 and 4
+require periods of significantly more \mbox{%DIFAUXCMD
+\gls{SWU} }\hspace{0pt}%DIFAUXCMD
+capacity. The \mbox{%DIFAUXCMD
+\gls{SWU} }\hspace{0pt}%DIFAUXCMD
+capacity 
+required at one time to meet the demand of Scenarios 2 and 4 can be reduced by 
+employing a variety of strategies, such as preparing and stockpiling uranium in advance 
+of shipment to the reactors or starting with non-natural uranium. An example of a 
+possible facility for enriching uranium for the \mbox{%DIFAUXCMD
+\glspl{MMR} }\hspace{0pt}%DIFAUXCMD
+in Scenario 2 would 
+have a monthly throughput of , and a \mbox{%DIFAUXCMD
+\gls{SWU} }\hspace{0pt}%DIFAUXCMD
+capacity of  
+}
 
 \begin{figure}
     \centering
@@ -1095,17 +1167,14 @@ required to enrich uranium sent to all reactors at each time step.}}
         \includegraphics[scale=0.5]{../figures/haleuSWU_scenarios_all.png}
         \caption{\DIFaddFL{\mbox{%DIFAUXCMD
 \gls{SWU} }\hspace{0pt}%DIFAUXCMD
-required to enrich uranium sent to Xe-100s at each time step.}}
+required to enrich uranium sent to advanced reactors at each time step.}}
         \label{fig:haleuswu_al}
     \end{subfigure}
     \caption{\DIFaddFL{\mbox{%DIFAUXCMD
 \gls{SWU} }\hspace{0pt}%DIFAUXCMD
-required to enrich natural uranium in Scenario 5.}}
+required to enrich natural uranium in all scenarios.}}
     \label{fig:swu_all}
 \end{figure}
-
-
-
 \DIFaddend \section{Conclusion}
 This work simulated multiple fuel cycle scenarios to compare the 
 material requirements of deploying different advanced reactors fueled 
@@ -1147,11 +1216,7 @@ transition scenarios. Another area of future work is to investigate the
 \gls{HEU} }\hspace{0pt}%DIFAUXCMD
 required to produce the \mbox{%DIFAUXCMD
 \gls{HALEU} }\hspace{0pt}%DIFAUXCMD
-required by each of the transitions. This will provide insight into how this \mbox{%DIFAUXCMD
-\gls{HALEU}
-}\hspace{0pt}%DIFAUXCMD
-production method can be used to meet the material requirements of these 
-transition scenarios}\DIFdelend \DIFaddbegin \DIFadd{material requirements if the \mbox{%DIFAUXCMD
+required by each of the transitions. This }\DIFdelend \DIFaddbegin \DIFadd{material requirements if the \mbox{%DIFAUXCMD
 \gls{HALEU} }\hspace{0pt}%DIFAUXCMD
 demand is met by downblending 
 \mbox{%DIFAUXCMD
@@ -1159,7 +1224,16 @@ demand is met by downblending
 or enriching uranium of non-natural enrichment, such as 
 \mbox{%DIFAUXCMD
 \gls{LEU} }\hspace{0pt}%DIFAUXCMD
-below 5\% $^{235}$U}\DIFaddend .  
+below 5\% $^{235}$U. Finally, an investigation into strategies 
+to meet uranium mass demand of the reactors while reducing the peaks in 
+the required \mbox{%DIFAUXCMD
+\gls{SWU} }\hspace{0pt}%DIFAUXCMD
+capacity }\DIFaddend will provide insight into \DIFdelbegin \DIFdel{how this \mbox{%DIFAUXCMD
+\gls{HALEU}
+}\hspace{0pt}%DIFAUXCMD
+production method can be used to meet the material requirements of these 
+transition scenarios}\DIFdelend \DIFaddbegin \DIFadd{the logistics 
+of deploying a transition to the advanced reactors}\DIFaddend .
 
 \section{Acknowledgments}
 This material is based upon work supported under an Integrated University Program Graduate
