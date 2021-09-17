@@ -466,20 +466,14 @@ reactors in the scenario.
 
 \subsection{Scenario comparisons}
 The mass of uranium sent to all reactors for each scenario and to just the 
-advanced reactors is shown in Figure \ref{fig:fuel_all}. There is a 
-large difference in the mass of uranium required at each time step when the Xe-100
-is deployed in Scenarios 3 and 5 compared to the mass of uranium required at each 
-time step when the \gls{MMR} is deployed in Scenarios 2 and 4. For the time 
-steps at which the \glspl{MMR} receive fuel (134, 181 occurences), the difference present 
-is on the order of 0.03-682 MTU at a single time step for the no growth scenarios and 
-between 0.30-696 MTU for the 1\% growth scenarios. There are 328, 298 time steps 
-in Scenarios 2 and 4 in which uranium is not sent to the \glspl{MMR}. At these time 
-steps, the Xe-100 reactors receive between 0.67-48.8 MTU and 0.59-452.6 MTU more uranium 
-in the no growth and 1\% growth scenarios, respectively. When the cumulative uranium 
-masses in each scenario are compared, Figure \ref{fig:cumulativeU_all}, it is clear 
-that deploying the \gls{MMR} will require more uranium than deploying the Xe-100 
-reactor for the same transition scenario. 
-
+advanced reactors is shown in Figure \ref{fig:fuel_all}. Fueling the Xe-100 
+reactors in Scenarios 3 and 5 requires less uranium than fueling the \glspl{LWR}
+at each time step. Fueling the \glspl{MMR} in Scenarios 2 and 4 requires the 
+most uranium at any single time step, but the average uranium mass is lower 
+than what is required to fuel the \glspl{LWR} prior to 2025. This is because 
+of multiple time steps in which no or a small mass (less than 20 MTU) 
+of uranium is sent to \glspl{MMR}, which offset the timesteps that require 
+a large mass of urnaium (more than 200 MTU) are sent to the \glspl{MMR}. 
 
 \begin{figure}
     \centering
@@ -500,6 +494,13 @@ reactor for the same transition scenario.
     \label{fig:fuel_all}
 \end{figure}
 
+Comparing the cumulative total mass of enriched uranium required in each scenario, 
+Figure \ref{fig:cumulativeU_all}, deploying the \gls{MMR} 
+requires more uranium than deploying the Xe-100 reactor for the same 
+transition scenario. Deploying the \gls{MMR} in a no growth transition 
+scenario requires more uranium than deploying Xe-100 reactors in a 1\% 
+growth transition. 
+
 \begin{figure}
     \centering 
     \includegraphics[scale=0.5]{../figures/fuelsupplytotal_scenarios_all.png}
@@ -509,14 +510,14 @@ reactor for the same transition scenario.
 
 Figure \ref{fig:swu_all} compares the \gls{SWU} capacity required to enrich uranium for 
 all reactors and the advanced reactors in each scenario. The \gls{SWU} capacity required 
-to enrich urnaium in Scenarios 1, 3, and 5 are similar in magnitude, but Scenarios 2 and 4
-require periods of significantly more \gls{SWU} capacity. The \gls{SWU} capacity 
-required at one time to meet the demand of Scenarios 2 and 4 can be reduced by 
-employing a variety of strategies, such as preparing and stockpiling uranium in advance 
-of shipment to the reactors or starting with non-natural uranium. 
+to enrich uranium in Scenarios 1, 3, and 5 are similar in magnitude. Scenarios 2 and 4
+appear to require more \gls{SWU} capacity, because the calculated \gls{SWU} capacity 
+is based on the mass of uranium sent to the reactors at each time step. Therefore, 
+the values presented do not reflect the required \gls{SWU} capactity of 
+an enrichment facility. 
 
-An example of a 
-possible facility for enriching uranium for the \glspl{MMR} in Scenario 2 would 
+An example of a possible facility for enriching uranium for the \glspl{MMR} in 
+Scenario 2 would 
 have a monthly throughput of 66 MTU, and a \gls{SWU} capacity of 2.28$\times 10^6$
 kg-SWU/month. A facility of this size and capacity would be able to meet the 
 enriched uranium demand, as Figure \ref{fig:enrich_storage}
