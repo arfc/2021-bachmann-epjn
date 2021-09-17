@@ -39,8 +39,9 @@ grid connection date and power level of each reactor deployed, and the
 decommission 
 date for any reactor closed before December 2020. Any reactor still in 
 operation in December 2020 is assumed to operate for 60 years after its 
-grid connection date. Only reactors with a power level above 400 MWe are included 
-to ensure that no research or experimental reactors are used. 
+grid connection date. The simulations do not consider research or 
+experimental reactors, and therefore only include reactors with power 
+levels above 400 MWe. 
 The mass of fuel in the \gls{LWR} reactor cores, including the mass  
 required for each refueling, was obtained from supplementary sources 
 \cite{todreas_nuclear_2012,cacuci_handbook_2010}.
@@ -119,7 +120,7 @@ recognized as part of the \Cycamore GrowthRegion and how each facility contribut
 to the specified capacity of the scenario. 
 
 The scenarios model the fuel cycle from the uranium mine to the final 
-disposal of the fuel in the HLW Sink.  Figure 
+disposal of the fuel in the \gls{HLW} Sink.  Figure 
 \ref{fig:fuel_cycle} shows the fuel cycle modeled in each simulation. Scenario 
 1 only includes the facilities in blue. All facilities are used in Scenarios 
 2-5, and the facility in red is the advanced reactor deployed in the 
