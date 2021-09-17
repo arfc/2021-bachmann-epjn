@@ -33,11 +33,11 @@ summarizes each of the scenarios.
         \end{tabular}
 \end{table}
 
-The \gls{IAEA} \gls{PRIS} database \cite{noauthor_power_1989} supplies
+The \gls{IAEA} \gls{PRIS} database \cite{noauthor_power_1989} supplied
 data about the currently deployed \glspl{LWR}. This database provides the 
 grid connection date and power level of each reactor deployed, and the 
 decommission 
-date for any reactor closed before December 2020. Any reactor still in 
+date for any reactor closed before December 2020. Any \gls{LWR} still in 
 operation in December 2020 is assumed to operate for 60 years after its 
 grid connection date. The simulations do not consider research or 
 experimental reactors, and therefore only include reactors with power 
@@ -57,23 +57,16 @@ burnup, and cycle time, shown in Table \ref{tab:reactor_summary}.
 Knowing a reactor \gls{EOL} burnup, power output, and its cycle length
 allows for calculating its initial load of fissile materials.
 In the MMR case, considering a burnup of 42.7 MWd/kgU \cite{hawari_development_2018},
-a power output of 40 MWth, and a cycle length of 2,042 EFPD \cite{venneri_neutronic_2015}
+a power output of 40 MWth, and a cycle length of 2,042 \gls{EFPD} \cite{venneri_neutronic_2015}
 results in the batch mass shown in Table \label{tab:reactor_summary}.
 The following simulations assume that this value remains constant for the
 power output and cycle length specified in the same table.
 
 The mass of uranium for the fresh \gls{TRISO} pebbles for the Xe-100 
 reactor was found by calculating the total volume of UCO \gls{TRISO} particle
-kernell in a fuel pebble the number of pebbles in the Xe-100 core, then 
+kernell in a fuel pebble and the number of 
+pebbles in the Xe-100 core\cite{harlan_x-energy_2018}, then 
 multiplying by the density of UCO and the mass fraction of uranium. 
-The isotopic compositions of the spent pebbles in the Xe-100 were found using a simple 
-Serpent 2 cite %https://serpent.vtt.fi/mediawiki/index.php/Main_Page 
-simulation of a single fuel pebble in a cube of helium, using a 
-reflective boundary condition.  The Serpent 2 depletion model finds the burnup 
-and isotopic compositions at six time steps, each corresponding to the first, 
-second, third, fourth, fifth, and sixth six-month pass, respectively.  A 
-complete list of isotopic compositions for each level of burnup, in atomic 
-fraction, can be found at cite %https://zenodo.org/record/5501385#.YTzUv1tOk1g.
 
 The Xe-100 reactor has a larger power output, requires a higher enrichment 
 level, and has a longer lifetime than the \gls{MMR}. However, the 
@@ -115,8 +108,8 @@ using the \Cycamore DeployManagerInst archetype, and the
 advanced reactors are deployed as needed to meet the prescribed power demand 
 of the scenario using the \Cycamore ManagerInst archetype 
 \cite{huff_fundamental_2016}. The \Cycamore DeployManagerInst deploys facilities 
-according to a manually descriped schedule, and each facility deployed is 
-recognized as part of the \Cycamore GrowthRegion and how each facility contributes 
+according to a manually defined schedule, with the \Cycamore GrowthRegion 
+recognizing each facility deployed how each it contributes 
 to the specified capacity of the scenario. 
 
 The scenarios model the fuel cycle from the uranium mine to the final 
@@ -163,9 +156,8 @@ scope of this work.
 
 The composition of the materials shown in Figure \ref{fig:fuel_cycle} 
 are defined using recipes. Spent and fresh \gls{LWR} 
-fuel recipes were obtained from \cite{yacout_visionverifiable_2006}. 
-The spent \gls{LWR} fuel 
-recipe assumes a 51 MWd/kg-U burnup. All other recipes capture the 
+fuel recipes were obtained from \cite{yacout_visionverifiable_2006},
+assuming a 51 MWd/kg-U burnup. All other recipes capture the 
 necessary isotopic ratios of uranium, but do not include other elements.
 Neutronic or depletion simualtions were not modeled as part of this work.  
 The enrichment feed recipe assumes natural uranium is used, and the tails 
