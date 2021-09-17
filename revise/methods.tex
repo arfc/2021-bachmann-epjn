@@ -61,7 +61,20 @@ results in the batch mass shown in Table \label{tab:reactor_summary}.
 The following simulations assume that this value remains constant for the
 power output and cycle length specified in the same table.
 
-The Xe-100 reactor has a much higher power output, requires a higher enrichment 
+The mass of urnaium for the fresh \gls{TRISO} pebbles for the Xe-100 
+reactor was found by calculating the total volume of UCO pebbles in a 
+\gls{TRISO} pebble and the number of pebbles in the Xe-100 core, then 
+multiplying by the density of UCO and the mass fraction of uranium. 
+The isotopic compositions of the spent pebbles in the Xe-100 were found using a simple 
+Serpent 2 cite %https://serpent.vtt.fi/mediawiki/index.php/Main_Page 
+simulation of a single fuel pebble in a cube of helium, using a 
+reflective boundary condition.  The Serpent 2 depletion model finds the burnup 
+and isotopic compositions at six time steps, each corresponding to the first, 
+second, third, fourth, fifth, and sixth six-month pass, respectively.  A 
+complete list of isotopic compositions for each level of burnup, in atomic 
+fraction, can be found at cite %https://zenodo.org/record/5501385#.YTzUv1tOk1g.
+
+The Xe-100 reactor has a larger power output, requires a higher enrichment 
 level, and has a longer lifetime than the \gls{MMR}. However, the 
 \gls{MMR} has a longer cycle time than the Xe-100 since it does not require 
 refueling once it is operational. Both advanced reactors require fuel 
@@ -72,7 +85,7 @@ every six months.
 \begin{table}[ht]
         \caption{Advanced reactor design specifications}
         \label{tab:reactor_summary}
-        \begin{tabular}{l c c c}
+        \begin{tabular}{l c c c }
             \hline
             Design Criteria & \gls{USNC} \gls{MMR} \cite{mitchell_usnc_2020}& 
                 X-Energy Xe-100 \cite{harlan_x-energy_2018,hussain_advances_2018} \\\hline
