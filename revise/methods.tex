@@ -8,7 +8,7 @@ institutions, and regions as agents within a fuel cycle simulation and models
 material transactions between agents according to a dynamic resource exchange. 
 
 The first scenario models 
-only the \glspl{LWR} that are deployed in the United States, and provides 
+only the \glspl{LWR} deployed in the United States and provides 
 a reference for comparison of the material requirements of the transitions. 
 The next two scenarios model no-growth 
 transitions to the \gls{USNC} \gls{MMR} or the X-Energy 
@@ -36,10 +36,10 @@ summarizes each of the scenarios.
 The \gls{IAEA} \gls{PRIS} database \cite{noauthor_power_1989} supplied
 data about the currently deployed \glspl{LWR}. This database provides the 
 grid connection date and power level of each reactor deployed, and the 
-decommission 
-date for any reactor closed before December 2020. Any \gls{LWR} still in 
-operation in December 2020 is assumed to operate for 60 years after its 
-grid connection date. The simulations do not consider research or 
+decommission date for any reactor closed before December 2020. Reactor 
+lifetimes assume 60 years of operation after the grid connection date 
+for any \gls{LWR} still in 
+operation in December 2020. The simulations do not consider research or 
 experimental reactors, and therefore only include reactors with power 
 levels above 400 MWe. 
 The mass of fuel in the \gls{LWR} reactor cores, including the mass  
@@ -47,30 +47,32 @@ required for each refueling, was obtained from supplementary sources
 \cite{todreas_nuclear_2012,cacuci_handbook_2010}.
 All \glspl{LWR} are assumed to have an 18 month cycle length. 
 
-We used a variety of open-source documents to obtain data about the advanced reactors
+A variety of open-source documents supplied data about the advanced reactors
 \cite{mitchell_usnc_2020, hawari_development_2018, venneri_neutronic_2015, 
 harlan_x-energy_2018, hussain_advances_2018}. 
 This includes 
 the power output, enrichment level, fuel form, reactor lifetime, fuel 
 burnup, and cycle time, shown in Table \ref{tab:reactor_summary}. 
 
-Knowing a reactor \gls{EOL} burnup, power output, and its cycle length
+Knowing a reactor's \gls{EOL} burnup, power output, and cycle length
 allows for calculating its initial load of fissile materials.
-In the MMR case, considering a burnup of 42.7 MWd/kgU \cite{hawari_development_2018},
-a power output of 40 MWth, and a cycle length of 2,042 \gls{EFPD} \cite{venneri_neutronic_2015}
-results in the batch mass shown in Table \label{tab:reactor_summary}.
+For the \gls{MMR}, considering a burnup of 42.7 MWd/kgU 
+\cite{hawari_development_2018},
+a power output of 40 MWth, and a cycle length of 2,042 \gls{EFPD} 
+\cite{venneri_neutronic_2015}
+results in the batch mass shown in Table \ref{tab:reactor_summary}.
 The following simulations assume that this value remains constant for the
 power output and cycle length specified in the same table.
 
 The mass of uranium for the fresh \gls{TRISO} pebbles for the Xe-100 
-reactor was found by calculating the total volume of UCO \gls{TRISO} particle
-kernell in a fuel pebble and the number of 
+reactor was found by calculating the total volume of UCO \gls{TRISO} 
+particle kernel in a fuel pebble and the number of 
 pebbles in the Xe-100 core\cite{harlan_x-energy_2018}, then 
 multiplying by the density of UCO and the mass fraction of uranium. 
 
-The Xe-100 reactor has a larger power output, requires a higher enrichment 
+The Xe-100 reactor has a greater power output, requires a higher enrichment 
 level, and has a longer lifetime than the \gls{MMR}. However, the 
-\gls{MMR} has a longer cycle time than the Xe-100 since it does not require 
+\gls{MMR} has a longer cycle time than the Xe-100 because it does not require 
 refueling once it is operational. Both advanced reactors require fuel 
 comprised of \gls{TRISO} particles, but in different forms. Refueling 
 of the Xe-100 reactor is modeled as a replacement of 1/7th of the core mass 
@@ -98,27 +100,27 @@ every six months.
 Each of the simulations model reactor deployment and operation from 1965 to 
 2090, with the transition to advanced reactors beginning 
 in 2025 for the applicable scenarios. Therefore, in the no growth scenarios 
-the power demand is held constant 
-at the power produced in 2025. The energy demand of each transition scenario 
-(Scenarios 2-5) is modeled by either a linear (for no growth) or 
-exponential (for 1\% growth) equation defined by the \Cycamore GrowthRegion
-archetype \cite{huff_fundamental_2016}, which determines if additional 
-facilities are required to meet the specified demand. The \glspl{LWR} are deployed 
+the power demand remains constant 
+at the power produced in 2025. A linear (for no growth) or exponential 
+(for 1\% grwoth) equation models the energy demand of each transition 
+scenario. A \Cycamore GrowthRegion archetype\cite{huff_fundamental_2016}
+defines the energy demand of the scenario and determines if additional 
+facilities are required to meet the demand. The \glspl{LWR} are deployed 
 using the \Cycamore DeployManagerInst archetype, and the 
 advanced reactors are deployed as needed to meet the prescribed power demand 
 of the scenario using the \Cycamore ManagerInst archetype 
 \cite{huff_fundamental_2016}. The \Cycamore DeployManagerInst deploys facilities 
 according to a manually defined schedule, with the \Cycamore GrowthRegion 
-recognizing each facility deployed how each it contributes 
-to the specified capacity of the scenario. 
+recognizing each facility deployed and how it contributes 
+to the specified capacity. 
 
 The scenarios model the fuel cycle from the uranium mine to the final 
-disposal of the fuel in the \gls{HLW} Sink.  Figure 
+disposal of the fuel in the \gls{HLW} Sink. Figure 
 \ref{fig:fuel_cycle} shows the fuel cycle modeled in each simulation. Scenario 
-1 only includes the facilities in blue. All facilities are used in Scenarios 
+1 includes only the facilities in blue. All facilities are used in Scenarios 
 2-5, and the facility in red is the advanced reactor deployed in the 
-scenario. Although the back end of the fuel 
-cycle is modeled, quantifying any waste is considered outside the 
+scenario. Although the simulations model the back end of the fuel 
+cycle, quantifying any waste is considered outside the 
 scope of this work. 
 
 \begin{figure}[ht]
@@ -154,11 +156,12 @@ scope of this work.
         \label{fig:fuel_cycle}
     \end{figure}
 
-The composition of the materials shown in Figure \ref{fig:fuel_cycle} 
-are defined using recipes. Spent and fresh \gls{LWR} 
-fuel recipes were obtained from \cite{yacout_visionverifiable_2006},
+Recipes define the composition of the materials shown in Figure 
+\ref{fig:fuel_cycle}. Yacout et al. \cite{yacout_visionverifiable_2006}
+recipes for spent and fresh \gls{LWR} 
 assuming a 51 MWd/kg-U burnup. All other recipes capture the 
-necessary isotopic ratios of uranium, but do not include other elements.
-Neutronic or depletion simualtions were not modeled as part of this work.  
-The enrichment feed recipe assumes natural uranium is used, and the tails 
-assay is 0.2\%. 
+necessary uranium isotopic ratios, but do not include other elements.
+This work did not include neutronic or depletion simualtions to determine 
+any material compositions.   
+The enrichment facility assumes the feed material is natural uranium, 
+and the tails assay is 0.2\%. 
