@@ -33,9 +33,8 @@ summarizes each of the scenarios.
         \end{tabular}
 \end{table}
 
-The \gls{IAEA} \gls{PRIS} database \cite{noauthor_power_1989} supplied
-data about the currently deployed \glspl{LWR}. This database provides the 
-grid connection date and power level of each reactor deployed, and the 
+The \gls{IAEA} \gls{PRIS} database \cite{noauthor_power_1989} provided the 
+grid connection date and power level of each \gls{LWR}, and the 
 decommission date for any reactor closed before December 2020. Reactor 
 lifetimes assume 60 years of operation after the grid connection date 
 for any \gls{LWR} still in 
@@ -67,7 +66,7 @@ power output and cycle length specified in the same table.
 The mass of uranium for the fresh \gls{TRISO} pebbles for the Xe-100 
 reactor was found by calculating the total volume of UCO \gls{TRISO} 
 particle kernel in a fuel pebble and the number of 
-pebbles in the Xe-100 core\cite{harlan_x-energy_2018}, then 
+pebbles in the Xe-100 core \cite{harlan_x-energy_2018}, then 
 multiplying by the density of UCO and the mass fraction of uranium. 
 
 The Xe-100 reactor has a greater power output, requires a higher enrichment 
@@ -75,7 +74,7 @@ level, and has a longer lifetime than the \gls{MMR}. However, the
 \gls{MMR} has a longer cycle time than the Xe-100 because it does not require 
 refueling once it is operational. Both advanced reactors require fuel 
 comprised of \gls{TRISO} particles, but in different forms. Refueling 
-of the Xe-100 reactor is modeled as a replacement of 1/7th of the core mass 
+of the Xe-100 reactor is modeled as a replacement of 1/7 of the core mass 
 every six months.  
 
 \begin{table}[ht]
@@ -90,7 +89,7 @@ every six months.
             Enrichment (\% $^{235}U$) & 13 & 15.5 \\
             Cycle Length (years) & 20 & online refueling\\
             Fuel form & \gls{TRISO} compacts & \gls{TRISO} pebbles\\
-            Reactor Lifetime & 20 years & 60 years \\
+            Reactor Lifetime (yrs) & 20 & 60 \\
             Mass of uranium per refueling (kg) & 1912.9 & 223.87 \\
             Burnup (MWd/kg U) & 42.7 & 163 \\
             \hline
@@ -114,8 +113,8 @@ according to a manually defined schedule, with the \Cycamore GrowthRegion
 recognizing each facility deployed and how it contributes 
 to the specified capacity. 
 
-The scenarios model the fuel cycle from the uranium mine to the final 
-disposal of the fuel in the \gls{HLW} Sink. Figure 
+The scenarios model the fuel cycle from the uranium mine to final 
+disposal in the \gls{HLW} Sink. Figure 
 \ref{fig:fuel_cycle} shows the fuel cycle modeled in each simulation. Scenario 
 1 includes only the facilities in blue. All facilities are used in Scenarios 
 2-5, and the facility in red is the advanced reactor deployed in the 
@@ -161,7 +160,7 @@ Recipes define the composition of the materials shown in Figure
 recipes for spent and fresh \gls{LWR} 
 assuming a 51 MWd/kg-U burnup. All other recipes capture the 
 necessary uranium isotopic ratios, but do not include other elements.
-This work did not include neutronic or depletion simualtions to determine 
+This work did not include neutronic or depletion simulations to determine 
 any material compositions.   
 The enrichment facility assumes the feed material is natural uranium, 
 and the tails assay is 0.2\%. 
