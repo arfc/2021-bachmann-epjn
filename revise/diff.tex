@@ -1,7 +1,7 @@
 \documentclass[preprint]{elsarticle}
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL ../main.tex     Fri Sep 17 15:13:05 2021
-%DIF ADD revisions.tex   Fri Sep 17 15:28:51 2021
+%DIF DEL ../main.tex     Wed Sep  8 08:10:29 2021
+%DIF ADD revisions.tex   Mon Sep 20 07:58:21 2021
 
 \usepackage{multirow}
 \usepackage{lineno}
@@ -49,7 +49,7 @@
 \usepackage{cleveref}
 \usepackage{datatool}
 \usepackage[acronym,toc]{glossaries}
- \newpage \newacronym[longplural={metric tons of heavy metal}]{MTHM}{MTHM}{metric ton of heavy metal}
+\newacronym[longplural={metric tons of heavy metal}]{MTHM}{MTHM}{metric ton of heavy metal}
 \newacronym{ABM}{ABM}{agent-based modeling}
 \newacronym{ACDIS}{ACDIS}{Program in Arms Control \& Domestic and International Security}
 \newacronym{AHTR}{AHTR}{Advanced High Temperature Reactor}
@@ -94,9 +94,7 @@
 \newacronym{DYMOND}{DYMOND}{Dynamic Model of Nuclear Development }
 \newacronym{EBS}{EBS}{Engineered Barrier System}
 \newacronym{EDZ}{EDZ}{Excavation Disturbed Zone}
-%DIF 94a94
-\newacronym{EFPD}{EFPD}{effective full power days} %DIF > 
-%DIF -------
+\newacronym{EFPD}{EFPD}{effective full power days}
 \newacronym{EIA}{EIA}{U.S. Energy Information Administration}
 \newacronym{EOL}{EOL}{end of life}
 \newacronym{EPA}{EPA}{Environmental Protection Agency}
@@ -236,10 +234,9 @@
 \newacronym{NEI}{NEI}{Nuclear Energy Institute}
 %\newacronym{<++>}{<++>}{<++>}
 %\newacronym{<++>}{<++>}{<++>}
- \newpage 
+
 
 \makeglossaries
-
 %DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
 %DIF UNDERLINE PREAMBLE %DIF PREAMBLE
 \RequirePackage[normalem]{ulem} %DIF PREAMBLE
@@ -251,8 +248,6 @@
 \providecommand{\DIFaddend}{} %DIF PREAMBLE
 \providecommand{\DIFdelbegin}{} %DIF PREAMBLE
 \providecommand{\DIFdelend}{} %DIF PREAMBLE
-\providecommand{\DIFmodbegin}{} %DIF PREAMBLE
-\providecommand{\DIFmodend}{} %DIF PREAMBLE
 %DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
 \providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
 \providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
@@ -263,22 +258,6 @@
 %DIF HYPERREF PREAMBLE %DIF PREAMBLE
 \providecommand{\DIFadd}[1]{\texorpdfstring{\DIFaddtex{#1}}{#1}} %DIF PREAMBLE
 \providecommand{\DIFdel}[1]{\texorpdfstring{\DIFdeltex{#1}}{}} %DIF PREAMBLE
-%DIF LISTINGS PREAMBLE %DIF PREAMBLE
-\RequirePackage{listings} %DIF PREAMBLE
-\RequirePackage{color} %DIF PREAMBLE
-\lstdefinelanguage{DIFcode}{ %DIF PREAMBLE
-%DIF DIFCODE_UNDERLINE %DIF PREAMBLE
-  moredelim=[il][\color{red}\sout]{\%DIF\ <\ }, %DIF PREAMBLE
-  moredelim=[il][\color{blue}\uwave]{\%DIF\ >\ } %DIF PREAMBLE
-} %DIF PREAMBLE
-\lstdefinestyle{DIFverbatimstyle}{ %DIF PREAMBLE
-	language=DIFcode, %DIF PREAMBLE
-	basicstyle=\ttfamily, %DIF PREAMBLE
-	columns=fullflexible, %DIF PREAMBLE
-	keepspaces=true %DIF PREAMBLE
-} %DIF PREAMBLE
-\lstnewenvironment{DIFverbatim}{\lstset{style=DIFverbatimstyle}}{} %DIF PREAMBLE
-\lstnewenvironment{DIFverbatim*}{\lstset{style=DIFverbatimstyle,showspaces=true}}{} %DIF PREAMBLE
 %DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
 
 \begin{document}
@@ -310,28 +289,30 @@ transition scenarios
 \gls{HALEU} 
 }\hspace{0pt}%DIFAUXCMD
 for advanced
-reactors : enriching natural uranium and downblending high-enriched uranium}\DIFdelend \DIFaddbegin \DIFadd{Transitioning to High Assay Low Enriched Uranium-fueled reactors will
-alter the material requirements of the current nuclear fuel cycle, in 
-terms of the mass of enriched uranium and Separative Work Unit capacity}\DIFaddend .  
-To understand the material requirements of \DIFdelbegin \DIFdel{enriching natural uranium to produce \mbox{%DIFAUXCMD
+reactors : enriching natural uranium and downblending high-enriched uranium. 
+To understand }\DIFdelend \DIFaddbegin \DIFadd{Transitioning to High Assay Low Enriched Uranium-fueled reactors will
+alter }\DIFaddend the material requirements of \DIFdelbegin \DIFdel{enriching natural uranium to 
+produce \mbox{%DIFAUXCMD
 \gls{HALEU}}\hspace{0pt}%DIFAUXCMD
-, }\DIFdelend \DIFaddbegin \DIFadd{transitioning to High Assay 
-Low Enriched Uranium-fueled advanced reactors }\DIFaddend this 
-work simulates multiple fuel cycle scenarios to compare how the \DIFdelbegin \DIFdel{size }\DIFdelend \DIFaddbegin \DIFadd{type }\DIFaddend of the
-advanced reactor deployed and the energy growth demand affect the 
+, this 
+}\DIFdelend \DIFaddbegin \DIFadd{the current nuclear fuel cycle, in 
+terms of the mass of enriched uranium and Separative Work Unit capacity.  
+This }\DIFaddend work simulates multiple fuel cycle scenarios to compare how the \DIFdelbegin \DIFdel{size }\DIFdelend \DIFaddbegin \DIFadd{type }\DIFaddend of 
+the advanced reactor deployed and the energy growth demand affect the 
 material requirements of the transition to \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
 \gls{HALEU}}\hspace{0pt}%DIFAUXCMD
 -fueled }\DIFdelend \DIFaddbegin \DIFadd{High Assay Low Enriched 
 Uranium-fueled }\DIFaddend reactors. Fuel 
 cycle scenarios considered include a no-growth and a 1\% growth transition to 
-either \DIFdelbegin \DIFdel{a microreactor fleet or a small modular reactor fleet }\DIFdelend \DIFaddbegin \DIFadd{the Ultra Safe Nuclear Corporation \mbox{%DIFAUXCMD
+either \DIFdelbegin \DIFdel{a microreactor fleet or a small modular reactor
+fleet }\DIFdelend \DIFaddbegin \DIFadd{the Ultra Safe Nuclear Corporation \mbox{%DIFAUXCMD
 \gls{MMR} }\hspace{0pt}%DIFAUXCMD
-or the X-energy Xe-100
-}\DIFaddend from the current fleet of Light Water Reactors \DIFdelbegin \DIFdel{.The Ultra Safe Nuclear Corporation 
+or the X-energy Xe-100 reactor
+}\DIFaddend from the current fleet of \DIFaddbegin \DIFadd{U.S. }\DIFaddend Light Water Reactors. \DIFdelbegin \DIFdel{The Ultra Safe Nuclear Corporation 
 \mbox{%DIFAUXCMD
 \gls{MMR} }\hspace{0pt}%DIFAUXCMD
 and X-energy Xe-100 were chosen to represent the microreactor 
-and small modular reactors, respectively.}\DIFdelend \DIFaddbegin \DIFadd{in the U.S. }\DIFaddend Materials of interest include 
+and small modular reactors, respectively. }\DIFdelend Materials of interest include 
 the number of 
 advanced reactors deployed, the mass of enriched uranium sent to the reactors, 
 and the \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
@@ -349,7 +330,7 @@ However,
 deploying the \mbox{%DIFAUXCMD
 \gls{MMR} }\hspace{0pt}%DIFAUXCMD
 causes periods of large increases of required 
-}\DIFdelend \DIFaddbegin \DIFadd{before 2025. Fueling the Xe-100 reactors requires less 
+}\DIFdelend \DIFaddbegin \DIFadd{before the transition. Fueling the Xe-100 reactors requires less 
 }\DIFaddend enriched uranium and \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
 \gls{SWU} }\hspace{0pt}%DIFAUXCMD
 capacity that are not present when 
@@ -375,9 +356,10 @@ is }\DIFdelend enriched between 5-20\% $^{235}$U, compared to the less than 5\% 
 that fuels current \glspl{LWR}. \gls{HALEU} fuel \DIFdelbegin \DIFdel{will help 
 }\DIFdelend \DIFaddbegin \DIFadd{helps 
 }\DIFaddend the reactors achieve higher burnups and longer cycle times than current 
-\glspl{LWR}. However, changes to the fuel enrichment are 
+\glspl{LWR}. However, changes to the fuel enrichment \DIFdelbegin \DIFdel{are 
 expected 
-to change the material requirements of the fuel cycle, and may delay 
+to }\DIFdelend change the material 
+requirements of the fuel cycle, and may delay 
 new reactor design deployment.
 
 The current supply chain for \gls{LEU} below 5\% enrichment 
@@ -401,15 +383,15 @@ limited by the physical inventory of \mbox{%DIFAUXCMD
 available. 
 Enriching \mbox{%DIFAUXCMD
 \gls{NU} }\hspace{0pt}%DIFAUXCMD
-is limited by the amount of }\DIFdelend \DIFaddbegin \DIFadd{The mass of }\DIFaddend uranium that can be mined and the \gls{SWU} capacity \DIFdelbegin \DIFdel{to enrich the uranium}\DIFdelend \DIFaddbegin \DIFadd{available 
-to enrich natural uranium limits the mass of enriched uranium that can be 
+is limited by the amount }\DIFdelend \DIFaddbegin \DIFadd{The mass }\DIFaddend of uranium that can be mined and the \gls{SWU} capacity \DIFdelbegin \DIFdel{to enrich the uranium}\DIFdelend \DIFaddbegin \DIFadd{available 
+to enrich it limits the mass of enriched uranium that can be 
 produced}\DIFaddend . Understanding 
 the \DIFdelbegin \DIFdel{material requirements of the }\DIFdelend transition to \gls{HALEU}-fueled reactors will \DIFdelbegin \DIFdel{provide insight into how each of these methods can be used 
 to obtain the \mbox{%DIFAUXCMD
 \gls{HALEU} }\hspace{0pt}%DIFAUXCMD
 fuel needed }\DIFdelend \DIFaddbegin \DIFadd{inform the material 
 requirements }\DIFaddend to meet electricity demands and 
-\DIFdelbegin \DIFdel{how the production method affects the }\DIFdelend \DIFaddbegin \DIFadd{the }\DIFaddend rate of reactor deployment.
+\DIFdelbegin \DIFdel{how the production method affects }\DIFdelend the rate of reactor deployment.
 
 In 2011 the \gls{DOE-NE} commissioned a Nuclear Fuel Cycle \gls{ES} 
 \cite{wigeland_nuclear_2014} to compare fuel cycle options at equilibrium
@@ -417,8 +399,9 @@ to determine their advantages and disadvantages
 based on 9 high-level performance metrics, such as resource utilization and 
 environmental impact. Each of the fuel cycle options included in the 
 \gls{ES} fall into one of 40 different \glspl{EG}, defined by fuel 
-characteristics such as the type of fuel in the reactors (uranium, 
-U/Th), neutron spectrum, and the inclusion of spent fuel recycling. 
+characteristics such as the \DIFdelbegin \DIFdel{type of fuel in the reactors (uranium, 
+U/Th)}\DIFdelend \DIFaddbegin \DIFadd{fuel type}\DIFaddend , neutron spectrum, and the inclusion 
+of spent fuel recycling. 
 
 One of the \glspl{EG}, \gls{EG}02 - ``Once-through using enriched-U fuel to 
 high burnup in thermal or fast critical reactors'', looked at the metrics 
@@ -435,9 +418,8 @@ A similar effect was observed by increasing the enrichment of fuel in a
 \gls{PWR} from 4\% to 7\% \cite{burns_reactor_2020}, and in a \gls{LWR}
 \gls{SMR} of Russian origin \cite{hernandez_potential_2020}. 
 
-Based on \DIFdelbegin \DIFdel{this }\DIFdelend \DIFaddbegin \DIFadd{the }\DIFaddend prior work, increasing the enrichment level of uranium fuel 
-is expected to  
-increase the material requirements at the front end of 
+Based on \DIFdelbegin \DIFdel{this }\DIFdelend prior work, \DIFaddbegin \DIFadd{we expect }\DIFaddend increasing the enrichment level of uranium fuel 
+\DIFdelbegin \DIFdel{is expected }\DIFdelend to increase the material requirements at the front end of 
 the fuel cycle. However, the exact change in requirements depends 
 on the type of reactor, enrichment level, and transition scenario.
 \DIFdelbegin \DIFdel{Therefore, it is important to accurately model }\DIFdelend \DIFaddbegin \DIFadd{Modeling }\DIFaddend the transition to any future
@@ -451,8 +433,8 @@ assuming that \gls{NU} will be enriched to produce fuel for \glspl{LWR} and
 \gls{HALEU}-fueled reactors. 
 Metrics of interest include the deployment schedule of \gls{HALEU}-fueled 
 reactors, mass of enriched uranium, and the \gls{SWU} capacity required to 
-enrich uranium for each scenario. The material requirements of each transition 
-scenario will be compared to identify any advantages or disadvantages of 
+enrich uranium for each scenario. \DIFdelbegin \DIFdel{The }\DIFdelend \DIFaddbegin \DIFadd{Comparing the }\DIFaddend material requirements of each 
+transition scenario will \DIFdelbegin \DIFdel{be compared to identify }\DIFdelend \DIFaddbegin \DIFadd{reveal }\DIFaddend any advantages or disadvantages of 
 a given transition scenario. 
 \section{Methodology}
 This work simulates multiple transition scenarios to advanced reactors
@@ -462,7 +444,7 @@ are modeled using \Cyclus \cite{huff_fundamental_2016};
 an open-source, agent-based fuel cycle simulator. \DIFaddbegin \Cyclus \DIFadd{defines facilities, 
 institutions, and regions as agents within a fuel cycle simulation and models 
 material transactions between agents according to a dynamic resource exchange. 
-}
+}
 
 \DIFaddend The first scenario models 
 only the \glspl{LWR} \DIFdelbegin \DIFdel{that are }\DIFdelend deployed in the United States \DIFdelbegin \DIFdel{, }\DIFdelend and provides 
@@ -491,14 +473,17 @@ summarizes each of the scenarios.
 \end{table}
 
 The \gls{IAEA} \gls{PRIS} database \cite{noauthor_power_1989} \DIFdelbegin \DIFdel{supplies
-}\DIFdelend \DIFaddbegin \DIFadd{supplied
-}\DIFaddend data about the currently deployed \glspl{LWR}. This database provides the 
-grid connection date and power level of each reactor deployed, and the 
+data about the currently deployed \mbox{%DIFAUXCMD
+\glspl{LWR}}\hspace{0pt}%DIFAUXCMD
+. This database provides }\DIFdelend \DIFaddbegin \DIFadd{provided }\DIFaddend the 
+grid connection date and power level of each \DIFdelbegin \DIFdel{reactor deployed}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\gls{LWR}}\hspace{0pt}%DIFAUXCMD
+}\DIFaddend , and the 
 decommission date for any reactor closed before December 2020. \DIFdelbegin \DIFdel{Any reactor still in 
 operation in December 2020 is assumed to operate for }\DIFdelend \DIFaddbegin \DIFadd{Reactor 
 lifetimes assume }\DIFaddend 60 years \DIFdelbegin \DIFdel{after its 
 }\DIFdelend \DIFaddbegin \DIFadd{of operation after the }\DIFaddend grid connection date 
-\DIFdelbegin \DIFdel{. Only reactorswith a power 
+\DIFdelbegin \DIFdel{. Only reactors with a power 
 level }\DIFdelend \DIFaddbegin \DIFadd{for any \mbox{%DIFAUXCMD
 \gls{LWR} }\hspace{0pt}%DIFAUXCMD
 still in 
@@ -521,7 +506,7 @@ harlan_x-energy_2018, hussain_advances_2018}}\hspace{0pt}%DIFAUXCMD
 This includes 
 the power output, enrichment level, fuel form, reactor lifetime, fuel 
 burnup, and cycle time, shown in Table \ref{tab:reactor_summary}. 
-\DIFdelbegin \DIFdel{The }\DIFdelend \DIFaddbegin 
+\DIFaddbegin 
 
 \DIFadd{Knowing a reactor's \mbox{%DIFAUXCMD
 \gls{EOL} }\hspace{0pt}%DIFAUXCMD
@@ -542,27 +527,27 @@ a power output of 40 MWth, and a cycle length of 2,042 \mbox{%DIFAUXCMD
 results in the batch mass shown in Table \ref{tab:reactor_summary}.
 The following simulations assume that this value remains constant for the
 power output and cycle length specified in the same table.
-}
+}
 
 \DIFadd{The mass of uranium for the fresh \mbox{%DIFAUXCMD
 \gls{TRISO} }\hspace{0pt}%DIFAUXCMD
-pebbles for the }\DIFaddend Xe-100 
-reactor \DIFdelbegin \DIFdel{has a much higher }\DIFdelend \DIFaddbegin \DIFadd{was found by calculating the total volume of UCO \mbox{%DIFAUXCMD
+pebbles for the Xe-100 
+reactor was found by calculating the total volume of UCO \mbox{%DIFAUXCMD
 \gls{TRISO} 
 }\hspace{0pt}%DIFAUXCMD
 particle kernel in a fuel pebble and the number of 
-pebbles in the Xe-100 core\mbox{%DIFAUXCMD
+pebbles in the Xe-100 core \mbox{%DIFAUXCMD
 \cite{harlan_x-energy_2018}}\hspace{0pt}%DIFAUXCMD
 , then 
 multiplying by the density of UCO and the mass fraction of uranium. 
-}
+}
 
-\DIFadd{The Xe-100 reactor has a greater }\DIFaddend power output, requires a higher enrichment 
+\DIFaddend The Xe-100 reactor has a \DIFdelbegin \DIFdel{much higher }\DIFdelend \DIFaddbegin \DIFadd{greater }\DIFaddend power output, requires a higher enrichment 
 level, and has a longer lifetime than the \gls{MMR}. However, the 
 \gls{MMR} has a longer cycle time than the Xe-100 \DIFdelbegin \DIFdel{since }\DIFdelend \DIFaddbegin \DIFadd{because }\DIFaddend it does not require 
 refueling once it is operational. Both advanced reactors require fuel 
 comprised of \gls{TRISO} particles, but in different forms. Refueling 
-of the Xe-100 reactor is modeled as a replacement of 1/7th of the core mass 
+of the Xe-100 reactor is modeled as a replacement of 1/\DIFdelbegin \DIFdel{7th }\DIFdelend \DIFaddbegin \DIFadd{7 }\DIFaddend of the core mass 
 every six months.  
 
 \begin{table}[ht]
@@ -579,7 +564,7 @@ every six months.
             Enrichment (\% $^{235}U$) & 13 & 15.5 \\
             Cycle Length (years) & 20 & online refueling\\
             Fuel form & \gls{TRISO} compacts & \gls{TRISO} pebbles\\
-            Reactor Lifetime & 20 years & 60 years \\
+            Reactor Lifetime \DIFaddbeginFL \DIFaddFL{(yrs) }\DIFaddendFL & 20 \DIFdelbeginFL \DIFdelFL{years }\DIFdelendFL & 60 \DIFdelbeginFL \DIFdelFL{years }\DIFdelendFL \\
             Mass of uranium per refueling (kg) & 1912.9 & 223.87 \\
             Burnup (MWd/kg U) & 42.7 & 163 \\
             \hline
@@ -603,10 +588,11 @@ of the scenario using the \Cycamore ManagerInst archetype
 according to a manually defined schedule, with the }\Cycamore \DIFadd{GrowthRegion 
 recognizing each facility deployed and how it contributes 
 to the specified capacity. 
-}\DIFaddend 
+}\DIFaddend 
 
-The scenarios model the fuel cycle from the uranium mine to the final 
-disposal of the fuel in the \DIFdelbegin \DIFdel{HLW }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+The scenarios model the fuel cycle from the uranium mine to \DIFdelbegin \DIFdel{the final 
+disposal of the fuel in the HLW }\DIFdelend \DIFaddbegin \DIFadd{final 
+disposal in the \mbox{%DIFAUXCMD
 \gls{HLW} }\hspace{0pt}%DIFAUXCMD
 }\DIFaddend Sink. Figure 
 \ref{fig:fuel_cycle} shows the fuel cycle modeled in each simulation. Scenario 
@@ -649,20 +635,24 @@ scope of this work.
         \label{fig:fuel_cycle}
     \end{figure}
 
-\DIFdelbegin \DIFdel{Material compositions are defined using recipes. Spent }\DIFdelend \DIFaddbegin \DIFadd{Recipes define the composition of the materials shown in Figure 
+\DIFdelbegin \DIFdel{Material compositions are defined using recipes. Spent and fresh \mbox{%DIFAUXCMD
+\gls{LWR} 
+}\hspace{0pt}%DIFAUXCMD
+fuel recipes were obtained from \mbox{%DIFAUXCMD
+\cite{yacout_visionverifiable_2006}}\hspace{0pt}%DIFAUXCMD
+. The spent \mbox{%DIFAUXCMD
+\gls{LWR} }\hspace{0pt}%DIFAUXCMD
+fuel 
+recipe assumes }\DIFdelend \DIFaddbegin \DIFadd{Recipes define the composition of the materials shown in Figure 
 \ref{fig:fuel_cycle}. Yacout et al. \mbox{%DIFAUXCMD
 \cite{yacout_visionverifiable_2006}
 }\hspace{0pt}%DIFAUXCMD
-recipes for spent }\DIFaddend and fresh \gls{LWR} 
-\DIFdelbegin \DIFdel{fuel recipes were obtained from \mbox{%DIFAUXCMD
-\cite{yacout_visionverifiable_2006}}\hspace{0pt}%DIFAUXCMD
-. 
-The spent \mbox{%DIFAUXCMD
-\gls{LWR} }\hspace{0pt}%DIFAUXCMD
-fuel 
-recipe assumes }\DIFdelend \DIFaddbegin \DIFadd{assuming }\DIFaddend a 51 MWd/kg-U burnup. All other recipes capture the 
+recipes for spent and fresh \mbox{%DIFAUXCMD
+\gls{LWR} 
+}\hspace{0pt}%DIFAUXCMD
+assuming }\DIFaddend a 51 MWd/kg-U burnup. All other recipes capture the 
 necessary \DIFdelbegin \DIFdel{isotopic ratios of uranium}\DIFdelend \DIFaddbegin \DIFadd{uranium isotopic ratios}\DIFaddend , but do not include other elements.
-\DIFdelbegin \DIFdel{The enrichment feed recipe assumes natural uranium is used}\DIFdelend \DIFaddbegin \DIFadd{This work did not include neutronic or depletion simualtions to determine 
+\DIFdelbegin \DIFdel{The enrichment feed recipe assumes natural uranium is used}\DIFdelend \DIFaddbegin \DIFadd{This work did not include neutronic or depletion simulations to determine 
 any material compositions.   
 The enrichment facility assumes the feed material is natural uranium}\DIFaddend , 
 and the tails assay is 0.2\%. 
@@ -697,8 +687,8 @@ Next, Figure \ref{fig:fuel_1} shows the mass of enriched uranium sent to
 the \glspl{LWR} at each time step. The \glspl{LWR} are 
 defined to have an 18 month cycle length, with a third of the uranium 
 mass replaced \DIFdelbegin \DIFdel{at }\DIFdelend each refueling outage. \DIFdelbegin \DIFdel{However, when a new reactor 
-is deployed it is deployed }\DIFdelend \DIFaddbegin \DIFadd{New reactors 
-are deployed }\DIFaddend with an entire core of uranium\DIFdelbegin \DIFdel{which leads 
+is deployed it is }\DIFdelend \DIFaddbegin \DIFadd{New reactors 
+are }\DIFaddend deployed with an entire core of uranium\DIFdelbegin \DIFdel{which leads 
 to the large }\DIFdelend \DIFaddbegin \DIFadd{, leading 
 to }\DIFaddend increases in the mass of uranium sent to the reactors \DIFaddbegin \DIFadd{at a single time 
 step}\DIFaddend , such 
@@ -708,7 +698,7 @@ of enriched uranium sent to the \glspl{LWR} is 157.6 MTU/month. \DIFaddbegin \DI
 of 30,635.0 MTU are sent to \mbox{%DIFAUXCMD
 \glspl{LWR} }\hspace{0pt}%DIFAUXCMD
 after 2025 in this scenario. 
-}\DIFaddend 
+}\DIFaddend 
 
 \begin{figure}
     \centering 
@@ -736,11 +726,11 @@ After 2025, an average of 0.302$\times 10^6$ kg-\mbox{%DIFAUXCMD
 }\DIFaddend is required to 
 enrich the uranium sent to the \glspl{LWR}.
 \DIFaddbegin \DIFadd{A total of 11.1$\times 10^8$ kg-SWU are required to enrich uranium for the 
-reactors in this scenario, and a toal of 2.36$\times 10^8$ kg-SWU is required 
+reactors in this scenario, and a total of 2.36$\times 10^8$ kg-SWU is required 
 to enrich uranium sent to \mbox{%DIFAUXCMD
 \glspl{LWR} }\hspace{0pt}%DIFAUXCMD
 after 2025. 
-}\DIFaddend 
+}\DIFaddend 
 
 \begin{figure}
     \centering
@@ -757,8 +747,8 @@ schedule of the \glspl{LWR} in this scenario\DIFdelbegin \DIFdel{is
 applied to each of the other scenarios}\DIFdelend , and therefore the material 
 requirements of \DIFdelbegin \DIFdel{each of the following scenarios }\DIFdelend \DIFaddbegin \DIFadd{the transition scenarios prior to 2025 }\DIFaddend are the 
 same as those of this scenario\DIFdelbegin \DIFdel{prior to 2025. 
-}\DIFdelend \DIFaddbegin \DIFadd{.  
-}\DIFaddend 
+}\DIFdelend \DIFaddbegin \DIFadd{.  
+}\DIFaddend 
 
 \subsection{Scenario 2}
 The energy produced by each type of reactor, the transition energy demand, 
@@ -769,7 +759,7 @@ October 2031, and the maximum number deployed at one time is
 \glspl{LWR}
 }\hspace{0pt}%DIFAUXCMD
 deployed in 2025.
-}\DIFaddend 
+}\DIFaddend 
 
 Once the transition begins in 2025, \DIFdelbegin \DIFdel{there are some time periods in which 
 }\DIFdelend the energy demand of the scenario is 
@@ -828,14 +818,13 @@ mass of enriched uranium sent to the
 prior to 2025. This is despite a \DIFdelbegin \DIFdel{much higher }\DIFdelend \DIFaddbegin \DIFadd{greater }\DIFaddend maximum and multiple peaks \DIFdelbegin \DIFdel{higher
 than }\DIFdelend \DIFaddbegin \DIFadd{larger
 than the
-}\DIFaddend average mass sent to the \glspl{LWR}. The \DIFdelbegin \DIFdel{lower average is explained by the 
-multiple time periods in 
+}\DIFaddend average mass sent to the \glspl{LWR}. The \DIFdelbegin \DIFdel{lower average is explained by }\DIFdelend \DIFaddbegin \DIFadd{smaller average is because of the 
+lack of refueling and }\DIFaddend the multiple time \DIFdelbegin \DIFdel{periods in 
 which no \mbox{%DIFAUXCMD
 \gls{HALEU} }\hspace{0pt}%DIFAUXCMD
 is sent to the \mbox{%DIFAUXCMD
 \glspl{MMR} }\hspace{0pt}%DIFAUXCMD
-due to the lack of refueling. }\DIFdelend \DIFaddbegin \DIFadd{smaller average is because of the 
-lack of refueling and the multiple time steps when additional 
+due to the lack of refueling}\DIFdelend \DIFaddbegin \DIFadd{steps when additional 
 \mbox{%DIFAUXCMD
 \glspl{MMR} }\hspace{0pt}%DIFAUXCMD
 are not deployed.
@@ -844,8 +833,7 @@ After 2025, all of the reactors receive a total of 81,747.7 MTU. The
 \glspl{MMR} }\hspace{0pt}%DIFAUXCMD
 receive a total of 51,112.7 MTU. These totals show that most 
 of the uranium produced after 2025 is for use an the advanced reactors, 
-which is consistent with the reactor deployment and decommissioning schedule. 
-}\DIFaddend 
+which is consistent with the reactor deployment and decommissioning schedule}\DIFaddend . 
 
 \begin{figure}
     \centering
@@ -893,7 +881,7 @@ capacity than enriching uranium for the \mbox{%DIFAUXCMD
 \glspl{LWR} 
 }\hspace{0pt}%DIFAUXCMD
 prior to 2025 }\DIFaddend because the \glspl{MMR} require \DIFdelbegin \DIFdel{a much larger mass and 
-a }\DIFdelend \DIFaddbegin \DIFadd{uranium at a }\DIFaddend higher enrichment 
+}\DIFdelend \DIFaddbegin \DIFadd{uranium at }\DIFaddend a higher enrichment 
 level. \DIFdelbegin \DIFdel{An average of 
 1.37}\DIFdelend \DIFaddbegin \DIFadd{Enriching uranium for the \mbox{%DIFAUXCMD
 \glspl{MMR} }\hspace{0pt}%DIFAUXCMD
@@ -904,12 +892,12 @@ kg-\gls{SWU}\DIFdelbegin \DIFdel{are needed to enrich the uranium sent to \mbox{
 }\DIFdelend . These values are both \DIFdelbegin \DIFdel{higher }\DIFdelend \DIFaddbegin \DIFadd{more }\DIFaddend than the 
 average and maximum \gls{SWU} capacity needed to enrich \DIFdelbegin \DIFdel{fuel }\DIFdelend \DIFaddbegin \DIFadd{uranium }\DIFaddend for the 
 \glspl{LWR} \DIFdelbegin \DIFdel{in Scenario 1. 
-}\DIFdelend \DIFaddbegin \DIFadd{prior to 2025. Enriching uranium for all reactors after 2025 
+}\DIFdelend \DIFaddbegin \DIFadd{prior to 2025. Enriching uranium for all reactors after 2025 
 requires a total of 16.8$\times 10^8$ kg-SWU and enriching uranium for 
 just the \mbox{%DIFAUXCMD
 \glspl{MMR} }\hspace{0pt}%DIFAUXCMD
 requires 14.4$\times 10^8$ kg-SWU. 
-}\DIFaddend 
+}\DIFaddend 
 
 \begin{figure}
     \centering
@@ -948,7 +936,7 @@ reactors. \DIFaddbegin \DIFadd{Nine times more \mbox{%DIFAUXCMD
 \glspl{MMR} }\hspace{0pt}%DIFAUXCMD
 are needed than Xe-100 reactors to 
 meet the no-growth energy transition.
-}\DIFaddend 
+}\DIFaddend 
 
 \DIFdelbegin \DIFdel{The }\DIFdelend \DIFaddbegin \DIFadd{Scenario 3 exhibits the }\DIFaddend same deficit between the energy produced and 
 demand between 2030-2050 that was observed in Scenario \DIFdelbegin \DIFdel{2 is present in the energy produced 
@@ -991,7 +979,7 @@ Scenario 2. \DIFaddbegin \DIFadd{A total of 58,410.1 MTU and 27,775.1 MTU are se
 all reactors after 2025 and the advanced reactors in the scenario, respectively, 
 showing
 that this transition scenario requires less uranium than Scenario 2. 
-}\DIFaddend 
+}\DIFaddend 
 
 \begin{figure}
     \centering
@@ -1034,7 +1022,7 @@ kg-\gls{SWU}. \DIFaddbegin \DIFadd{A total of 11.9$\times 10^8$ kg-SWU and 9.57$
 kg-SWU are required 
 to enrich uranium for all reactors after 2025 and the advanced reactors in the 
 scenario, respectively. 
-}\DIFaddend 
+}\DIFaddend 
 
 \begin{figure}
     \centering
@@ -1141,12 +1129,19 @@ kg-\gls{SWU}/month and a maximum of \DIFdelbegin \DIFdel{21.5}\DIFdelend \DIFadd
 are required to enrich the uranium that is sent to \glspl{MMR}. These values 
 are \DIFdelbegin \DIFdel{higher }\DIFdelend \DIFaddbegin \DIFadd{larger }\DIFaddend than the \gls{SWU} 
 capacity required to enrich uranium for the \glspl{MMR} in 
-Scenario 2. The average is slightly \DIFdelbegin \DIFdel{higher }\DIFdelend \DIFaddbegin \DIFadd{greater }\DIFaddend than the average \gls{SWU} 
-capacity required to enrich uranium for the \glspl{LWR} before 2025 in 
-Scenario 1. \DIFaddbegin \DIFadd{A total of 25.5$\times 10^8$ kg-SWU and 23.1$\times 10^8$
-kg-SWU are required to enrich uranium for all reactors after 2025 and the advanced 
+Scenario 2. The average \DIFdelbegin \DIFdel{is slightly higher }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\gls{SWU} }\hspace{0pt}%DIFAUXCMD
+capacity to enrich uranium for 
+the \mbox{%DIFAUXCMD
+\glspl{MMR} }\hspace{0pt}%DIFAUXCMD
+is slightly greater }\DIFaddend than the average \gls{SWU} 
+capacity required to enrich uranium for the \glspl{LWR} before \DIFaddbegin \DIFadd{2025. 
+A total of 25.5$\times 10^8$ kg-SWU and 23.1$\times 10^8$
+kg-SWU are required to enrich uranium for all reactors after }\DIFaddend 2025 \DIFdelbegin \DIFdel{in 
+Scenario 1. 
+}\DIFdelend \DIFaddbegin \DIFadd{and the advanced 
 reactors in the scenario, respectively. 
-}\DIFaddend 
+}\DIFaddend 
 
 \begin{figure}
     \centering
@@ -1184,11 +1179,11 @@ same \DIFdelbegin \DIFdel{as when
 }\DIFdelend \DIFaddbegin \DIFadd{time 
 }\DIFaddend \glspl{MMR} are deployed in Scenario 4. The maximum number of Xe-100 
 reactors deployed in the scenario is 2,\DIFdelbegin \DIFdel{339. 
-}\DIFdelend \DIFaddbegin \DIFadd{339, which is about 15,000 reactors 
+}\DIFdelend \DIFaddbegin \DIFadd{339, which is about 15,000 reactors 
 fewer than the \mbox{%DIFAUXCMD
 \glspl{MMR} }\hspace{0pt}%DIFAUXCMD
 required to meet the same energy demand. 
-}\DIFaddend 
+}\DIFaddend 
 
 \DIFdelbegin \DIFdel{There is a small deficit in the energy produced and }\DIFdelend \DIFaddbegin \DIFadd{The energy produced is less than the energy }\DIFaddend demand from 
 2026-2046, the same \DIFdelbegin \DIFdel{as what }\DIFdelend \DIFaddbegin \DIFadd{deficit that }\DIFaddend is observed in Scenario 4. After this 
@@ -1221,7 +1216,7 @@ These metrics are all \DIFdelbegin \DIFdel{much lower }\DIFdelend \DIFaddbegin \
 for fueling the \glspl{MMR} in Scenario 4. \DIFaddbegin \DIFadd{A total of 74,361.76 MTU and 
 43,726.74 MTU are required to fuel all reactors after 2025 and the advanced reactors 
 in the scenario, respectively.
-}\DIFaddend 
+}\DIFaddend 
 
 
 \begin{figure}
@@ -1277,7 +1272,7 @@ in Scenario 4, but the maximum capacity required for this scenario is much
 }\DIFdelend prior to 2025. \DIFaddbegin \DIFadd{A total of 17.4$\times 10^8$ kg-SWU and 15.1$\times 10^8$
 kg-SWU are required to enrich uranium for all reactors after 2025 and the advanced 
 reactors in the scenario.  
-}\DIFaddend 
+}\DIFaddend 
 
 \begin{figure}
     \centering
@@ -1306,10 +1301,7 @@ reactors in the scenario.
     \label{fig:swu_5}
 \end{figure}
 
-\DIFdelbegin \section{\DIFdel{Conclusion}}
-%DIFAUXCMD
-\addtocounter{section}{-1}%DIFAUXCMD
-\DIFdel{This work }\DIFdelend \DIFaddbegin \subsection{\DIFadd{Scenario comparisons}}
+\DIFaddbegin \subsection{\DIFadd{Scenario comparisons}}
 \DIFadd{The mass of uranium sent to all reactors for each scenario and to just the 
 advanced reactors is shown in Figure \ref{fig:fuel_all}. Fueling the Xe-100 
 reactors in Scenarios 3 and 5 requires less uranium than fueling the \mbox{%DIFAUXCMD
@@ -1327,10 +1319,10 @@ of multiple time steps in which no or a small mass (less than 20 MTU)
 of uranium is sent to \mbox{%DIFAUXCMD
 \glspl{MMR}}\hspace{0pt}%DIFAUXCMD
 , which offset the timesteps that require 
-a large mass of urnaium (more than 200 MTU) are sent to the \mbox{%DIFAUXCMD
+a large mass of uranium (more than 200 MTU) are sent to the \mbox{%DIFAUXCMD
 \glspl{MMR}}\hspace{0pt}%DIFAUXCMD
 . 
-}
+}
 
 \begin{figure}
     \centering
@@ -1361,7 +1353,7 @@ transition scenario. Deploying the \mbox{%DIFAUXCMD
 in a no growth transition 
 scenario requires more uranium than deploying Xe-100 reactors in a 1\% 
 growth transition. 
-}
+}
 
 \begin{figure}
     \centering 
@@ -1385,9 +1377,9 @@ capacity
 is based on the mass of uranium sent to the reactors at each time step. Therefore, 
 the values presented do not reflect the required \mbox{%DIFAUXCMD
 \gls{SWU} }\hspace{0pt}%DIFAUXCMD
-capactity of 
+capacity of 
 an enrichment facility. 
-}
+}
 
 \begin{figure}
     \centering
@@ -1424,34 +1416,39 @@ capacity of 2.28$\times 10^6$
 kg-SWU/month. A facility of this size and capacity would be able to meet the 
 enriched uranium demand, as Figure \ref{fig:enrich_storage}
 shows. In this scenario, the enrichment facility goes online in 2025 and operates 
-through 2090, enriched uranium mass at the facility never goes below 0, but this does not 
-account for any time required to fabricate the fuel before shipment to the reactor 
-site. This theoretical example shows how a constant-capacity \mbox{%DIFAUXCMD
+through 2090. The stored enriched uranium mass at the facility never goes below 0, 
+but this example does not 
+account for any time required to fabricate the fuel before shipment to the reactor.
+This theoretical example shows how a constant-capacity \mbox{%DIFAUXCMD
 \gls{HALEU} }\hspace{0pt}%DIFAUXCMD
 enrichment 
 facility can meet the enriched uranium requirements of the scenario, but further 
 optimization of such a facility or the exploration of how other methods can be
 used meet the enriched uranium demand is left to future work. 
-}
+}
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{../figures/potential_uranium_stockpile.png}
     \caption{\DIFaddFL{Net enriched uranium mass stored at a theoretical enrichment facility with 
     a mass throughput of 66 MTU/month. This model assumes the facility goes online in 2025
-    and does not account for any time required for fuel facbircation.}}
+    and does not account for any time required for fuel fabrication.}}
     \label{fig:enrich_storage}
 \end{figure}
-\section{\DIFadd{Conclusions}}
-\DIFadd{This work }\DIFaddend simulated multiple fuel cycle scenarios to compare the 
+
+\DIFaddend \section{\DIFdelbegin \DIFdel{Conclusion}\DIFdelend \DIFaddbegin \DIFadd{Conclusions}\DIFaddend }
+This work simulated multiple fuel cycle scenarios to compare the 
 material requirements of deploying different advanced reactors fueled 
 by \gls{HALEU}. Scenarios include a no-growth and a 1\% growth 
 transitions to either the \gls{USNC} \gls{MMR} or the X-energy Xe-100 
-reactor from the current fleet of \glspl{LWR} in the US. The current 
-fleet of \glspl{LWR}, without a transition to an advanced reactor, \DIFdelbegin \DIFdel{is 
-also simulated }\DIFdelend \DIFaddbegin \DIFadd{was 
-also simulated for comparison}\DIFaddend . Each of these scenarios are compared 
-for their material 
+reactor from the current fleet of \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\glspl{LWR} }\hspace{0pt}%DIFAUXCMD
+in the US. The }\DIFdelend \DIFaddbegin \DIFadd{U.S. \mbox{%DIFAUXCMD
+\glspl{LWR}}\hspace{0pt}%DIFAUXCMD
+. We used the }\DIFaddend current 
+fleet of \glspl{LWR}, without a transition to an advanced reactor \DIFdelbegin \DIFdel{, is 
+also simulated}\DIFdelend \DIFaddbegin \DIFadd{for 
+comparison}\DIFaddend . Each of these scenarios are compared for their material 
 requirements, specifically the number of reactors deployed, the mass 
 of enriched uranium sent to the reactors, and the \gls{SWU} capacity 
 required to enrich natural uranium to produce the fuel needed for 
@@ -1482,7 +1479,7 @@ capacity , because \mbox{%DIFAUXCMD
 \glspl{MMR} }\hspace{0pt}%DIFAUXCMD
 require a large mass of enriched uranium when they are 
 first deployed and do not require refueling. This behavior is not observed 
-in the transitions to the }\DIFdelend \DIFaddbegin \DIFadd{requires a smaller average 
+in the transitions to }\DIFdelend \DIFaddbegin \DIFadd{requires a smaller average 
 uranium mass but a greater \mbox{%DIFAUXCMD
 \gls{SWU} }\hspace{0pt}%DIFAUXCMD
 capacity than fueling \mbox{%DIFAUXCMD
@@ -1494,7 +1491,7 @@ requires a higher enrichment level.
 Fueling \mbox{%DIFAUXCMD
 \glspl{MMR} }\hspace{0pt}%DIFAUXCMD
 involves large, one-time shipments of fuel, while 
-fueling the }\DIFaddend Xe-100 \DIFdelbegin \DIFdel{reactor because this reactor utilizes 
+fueling }\DIFaddend the Xe-100 \DIFdelbegin \DIFdel{reactor because this reactor utilizes 
 on-line refueling, so fuel 
 is continually sent to them}\DIFdelend \DIFaddbegin \DIFadd{involves small, continuous shipments of fuel 
 because of the different refueling schemes}\DIFaddend .
@@ -1539,99 +1536,79 @@ Urbana-Champaign for his assistance in technical editing.
 \DIFdelbegin %DIFDELCMD < \begin{thebibliography}{10}
 %DIFDELCMD < \expandafter\ifx\csname %%%
 \DIFdel{url}%DIFDELCMD < \endcsname\relax
-%DIFDELCMD <   \def\url#1{\texttt{#1}}\fi
+%DIFDELCMD <   \def\url%%%
+%\DIFdel{#1}%DIFDELCMD < {%%%
+%\texttt{\DIFdel{#1}}%DIFAUXCMD
+%DIFDELCMD < }\fi
 %DIFDELCMD < \expandafter\ifx\csname %%%
 \DIFdel{urlprefix}%DIFDELCMD < \endcsname\relax\def\urlprefix{URL }\fi
 %DIFDELCMD < \expandafter\ifx\csname %%%
 \DIFdel{href}%DIFDELCMD < \endcsname\relax
-%DIFDELCMD <   \def\href#1#2{#2} \def\path#1{#1}\fi
+%DIFDELCMD <   \def\href%%%
+%\DIFdel{#1#2}%DIFDELCMD < {%%%
+%\DIFdel{#2}%DIFDELCMD < } \def\path%%%
+%\DIFdel{#1}%DIFDELCMD < {%%%
+%\DIFdel{#1}%DIFDELCMD < }\fi
 %DIFDELCMD < 
 
 %DIFDELCMD < \bibitem{wigeland_nuclear_2014}
+%DIFDELCMD < %%%
 \DIFdel{R.~Wigeland, T.~Taiwo, H.~Ludewig, M.~Todosow, W.~Halsey, J.~Gehin, R.~Jubin,
   J.~Buelt, S.~Stockinger, K.~Jenni, B.~Oakley,
-  }\href{https://fuelcycleevaluation.inl.gov}{\DIFdel{Nuclear }%DIFDELCMD < {%%%
-\DIFdel{Fuel}%DIFDELCMD < } {%%%
-\DIFdel{Cycle}%DIFDELCMD < }
-%DIFDELCMD <   {%%%
-\DIFdel{Evaluation}%DIFDELCMD < } %%%
-\DIFdel{and }%DIFDELCMD < {%%%
-\DIFdel{Screening}%DIFDELCMD < } %%%
-\DIFdel{-- }%DIFDELCMD < {%%%
-\DIFdel{Final}%DIFDELCMD < } {%%%
-\DIFdel{Report}%DIFDELCMD < }%%%
-}%DIFAUXCMD
+  }%DIFDELCMD < \href{https://fuelcycleevaluation.inl.gov}{Nuclear {Fuel} {Cycle}
+%DIFDELCMD <   {Evaluation} and {Screening} -- {Final} {Report}}%%%
 \DIFdel{, Tech. Rep.
   INL/EXT-14-31465, U.S. Department of Energy (2014).
 }%DIFDELCMD < \newline\urlprefix\url{https://fuelcycleevaluation.inl.gov}
 %DIFDELCMD < 
 
 %DIFDELCMD < \bibitem{burns_reactor_2020}
+%DIFDELCMD < %%%
 \DIFdel{J.~R. Burns, R.~Hernandez, K.~A. Terrani, A.~T. Nelson, N.~R. Brown,
-  }\href{https://www.sciencedirect.com/science/article/pii/S0306454920301213}{\DIFdel{Reactor
-  and fuel cycle performance of light water reactor fuel with }%DIFDELCMD < {%%%
-\DIFdel{235U}%DIFDELCMD < }
-%DIFDELCMD <   %%%
-\DIFdel{enrichments above 5\%}}%DIFAUXCMD
+  }%DIFDELCMD < \href{https://www.sciencedirect.com/science/article/pii/S0306454920301213}{Reactor
+%DIFDELCMD <   and fuel cycle performance of light water reactor fuel with {235U}
+%DIFDELCMD <   enrichments above 5\%}%%%
 \DIFdel{, Annals of Nuclear Energy 142 (2020) 107423.
-}%DIFDELCMD < \newblock %%%
-\href {http://dx.doi.org/10.1016/j.anucene.2020.107423}
-  {%DIFDELCMD < \path{doi:10.1016/j.anucene.2020.107423}%%%
-}%DIFAUXCMD
+}%DIFDELCMD < \newblock \href {%%%
+\DIFdel{http://dx.doi.org/10.1016/j.anucene.2020.107423}%DIFDELCMD < }
+%DIFDELCMD <   {\path{doi:10.1016/j.anucene.2020.107423}}%%%
 \DIFdel{.
 }%DIFDELCMD < \newline\urlprefix\url{https://www.sciencedirect.com/science/article/pii/S0306454920301213}
 %DIFDELCMD < 
 
 %DIFDELCMD < \bibitem{hernandez_potential_2020}
+%DIFDELCMD < %%%
 \DIFdel{R.~Hernandez, N.~R. Brown,
-  }\href{http://www.sciencedirect.com/science/article/pii/S030645492030253X}{\DIFdel{Potential
-  fuel cycle performance of floating small modular light water reactors of
-  }%DIFDELCMD < {%%%
-\DIFdel{Russian}%DIFDELCMD < } %%%
-\DIFdel{origin}}%DIFAUXCMD
+  }%DIFDELCMD < \href{http://www.sciencedirect.com/science/article/pii/S030645492030253X}{Potential
+%DIFDELCMD <   fuel cycle performance of floating small modular light water reactors of
+%DIFDELCMD <   {Russian} origin}%%%
 \DIFdel{, Annals of Nuclear Energy 144 (2020) 107555.
-}%DIFDELCMD < \newblock %%%
-\href {http://dx.doi.org/10.1016/j.anucene.2020.107555}
-  {%DIFDELCMD < \path{doi:10.1016/j.anucene.2020.107555}%%%
-}%DIFAUXCMD
+}%DIFDELCMD < \newblock \href {%%%
+\DIFdel{http://dx.doi.org/10.1016/j.anucene.2020.107555}%DIFDELCMD < }
+%DIFDELCMD <   {\path{doi:10.1016/j.anucene.2020.107555}}%%%
 \DIFdel{.
 }%DIFDELCMD < \newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S030645492030253X}
 %DIFDELCMD < 
 
 %DIFDELCMD < \bibitem{huff_fundamental_2016}
+%DIFDELCMD < %%%
 \DIFdel{K.~D. Huff, M.~J. Gidden, R.~W. Carlsen, R.~R. Flanagan, M.~B. McGarry, A.~C.
   Opotowsky, E.~A. Schneider, A.~M. Scopatz, P.~P.~H. Wilson,
-  }\href{http://www.sciencedirect.com/science/article/pii/S0965997816300229}{\DIFdel{Fundamental
-  concepts in the }%DIFDELCMD < {%%%
-\DIFdel{Cyclus}%DIFDELCMD < } %%%
-\DIFdel{nuclear fuel cycle simulation framework}}%DIFAUXCMD
+  }%DIFDELCMD < \href{http://www.sciencedirect.com/science/article/pii/S0965997816300229}{Fundamental
+%DIFDELCMD <   concepts in the {Cyclus} nuclear fuel cycle simulation framework}%%%
 \DIFdel{, Advances
   in Engineering Software 94 (2016) 46--59, arXiv: 1509.03604.
-}%DIFDELCMD < \newblock %%%
-\href {http://dx.doi.org/10.1016/j.advengsoft.2016.01.014}
-  {%DIFDELCMD < \path{doi:10.1016/j.advengsoft.2016.01.014}%%%
-}%DIFAUXCMD
+}%DIFDELCMD < \newblock \href {%%%
+\DIFdel{http://dx.doi.org/10.1016/j.advengsoft.2016.01.014}%DIFDELCMD < }
+%DIFDELCMD <   {\path{doi:10.1016/j.advengsoft.2016.01.014}}%%%
 \DIFdel{.
 }%DIFDELCMD < \newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0965997816300229}
 %DIFDELCMD < 
 
 %DIFDELCMD < \bibitem{noauthor_power_1989}
-\href{https://www.iaea.org/publications/762/power-reactor-information-system-pris-reference-and-on-line-access-manual}{\DIFdel{Power
-  }%DIFDELCMD < {%%%
-\DIFdel{Reactor}%DIFDELCMD < } {%%%
-\DIFdel{Information}%DIFDELCMD < } {%%%
-\DIFdel{System}%DIFDELCMD < } %%%
-\DIFdel{(}%DIFDELCMD < {%%%
-\DIFdel{PRIS}%DIFDELCMD < }%%%
-\DIFdel{): }%DIFDELCMD < {%%%
-\DIFdel{Reference}%DIFDELCMD < } %%%
-\DIFdel{and }%DIFDELCMD < {%%%
-\DIFdel{On}%DIFDELCMD < }%%%
-\DIFdel{-line }%DIFDELCMD < {%%%
-\DIFdel{Access}%DIFDELCMD < }
-%DIFDELCMD <   {%%%
-\DIFdel{Manual}%DIFDELCMD < }%%%
-}%DIFAUXCMD
+%DIFDELCMD < \href{https://www.iaea.org/publications/762/power-reactor-information-system-pris-reference-and-on-line-access-manual}{Power
+%DIFDELCMD <   {Reactor} {Information} {System} ({PRIS}): {Reference} and {On}-line {Access}
+%DIFDELCMD <   {Manual}}%%%
 \DIFdel{, no. 507 in }%DIFDELCMD < {%%%
 \DIFdel{TECDOC}%DIFDELCMD < } {%%%
 \DIFdel{Series}%DIFDELCMD < }%%%
@@ -1641,55 +1618,39 @@ Urbana-Champaign for his assistance in technical editing.
 %DIFDELCMD < 
 
 %DIFDELCMD < \bibitem{todreas_nuclear_2012}
+%DIFDELCMD < %%%
 \DIFdel{N.~E. Todreas, Nuclear systems, 2nd Edition, Taylor \& Francis, Boca Raton, FL,
   2012.
-}%DIFDELCMD < 
+}%DIFDELCMD < 
 
 %DIFDELCMD < \bibitem{cacuci_handbook_2010}
+%DIFDELCMD < %%%
 \DIFdel{D.~G. Cacuci, Handbook of nuclear engineering, Springer, New York ;, 2010.
-}%DIFDELCMD < 
+}%DIFDELCMD < 
 
 %DIFDELCMD < \bibitem{mitchell_usnc_2020}
+%DIFDELCMD < %%%
 \DIFdel{M.~Mitchell,
-  }\href{https://gain.inl.gov/HALEU_Webinar_Presentations/33-Mitchell,Ultrasafe_Rev02-29apr2020.pdf}{%DIFDELCMD < {%%%
-\DIFdel{USNC}%DIFDELCMD < }
-%DIFDELCMD <   {%%%
-\DIFdel{Micro}%DIFDELCMD < } {%%%
-\DIFdel{Modular}%DIFDELCMD < } {%%%
-\DIFdel{Reactor}%DIFDELCMD < } %%%
-\DIFdel{– }%DIFDELCMD < {%%%
-\DIFdel{Project}%DIFDELCMD < } %%%
-\DIFdel{and }%DIFDELCMD < {%%%
-\DIFdel{Fuel}%DIFDELCMD < }%%%
-} %DIFAUXCMD
+  }%DIFDELCMD < \href{https://gain.inl.gov/HALEU_Webinar_Presentations/33-Mitchell,Ultrasafe_Rev02-29apr2020.pdf}{{USNC}
+%DIFDELCMD <   {Micro} {Modular} {Reactor} – {Project} and {Fuel}} %%%
 \DIFdel{(Apr. 2020).
 }%DIFDELCMD < \newline\urlprefix\url{https://gain.inl.gov/HALEU_Webinar_Presentations/33-Mitchell,Ultrasafe_Rev02-29apr2020.pdf}
 %DIFDELCMD < 
 
 %DIFDELCMD < \bibitem{harlan_x-energy_2018}
+%DIFDELCMD < %%%
 \DIFdel{B.~Harlan,
-  }\href{https://adamswebsearch2.nrc.gov/webSearch2/main.jsp?AccessionNumber=ML18253A109}{\DIFdel{X-energy
-  }%DIFDELCMD < {%%%
-\DIFdel{Xe}%DIFDELCMD < }%%%
-\DIFdel{-100 }%DIFDELCMD < {%%%
-\DIFdel{Reactor}%DIFDELCMD < } %%%
-\DIFdel{initial }%DIFDELCMD < {%%%
-\DIFdel{NRC}%DIFDELCMD < } %%%
-\DIFdel{meeting}} %DIFAUXCMD
+  }%DIFDELCMD < \href{https://adamswebsearch2.nrc.gov/webSearch2/main.jsp?AccessionNumber=ML18253A109}{X-energy
+%DIFDELCMD <   {Xe}-100 {Reactor} initial {NRC} meeting} %%%
 \DIFdel{(Sep. 2018).
 }%DIFDELCMD < \newline\urlprefix\url{https://adamswebsearch2.nrc.gov/webSearch2/main.jsp?AccessionNumber=ML18253A109}
 %DIFDELCMD < 
 
 %DIFDELCMD < \bibitem{hussain_advances_2018}
+%DIFDELCMD < %%%
 \DIFdel{M.~Hussain, F.~Reitsma, M.~Subki, H.~Kiuchi,
-  }\href{http://aris.iaea.org}{\DIFdel{Advances in }%DIFDELCMD < {%%%
-\DIFdel{Small}%DIFDELCMD < } {%%%
-\DIFdel{Modular}%DIFDELCMD < } {%%%
-\DIFdel{Reactor}%DIFDELCMD < }
-%DIFDELCMD <   {%%%
-\DIFdel{Technology}%DIFDELCMD < } {%%%
-\DIFdel{Developments}%DIFDELCMD < }%%%
-}%DIFAUXCMD
+  }%DIFDELCMD < \href{http://aris.iaea.org}{Advances in {Small} {Modular} {Reactor}
+%DIFDELCMD <   {Technology} {Developments}}%%%
 \DIFdel{, A }%DIFDELCMD < {%%%
 \DIFdel{Supplement}%DIFDELCMD < } %%%
 \DIFdel{to: }%DIFDELCMD < {%%%
@@ -1708,6 +1669,7 @@ Urbana-Champaign for his assistance in technical editing.
 %DIFDELCMD < 
 
 %DIFDELCMD < \bibitem{yacout_visionverifiable_2006}
+%DIFDELCMD < %%%
 \DIFdel{A.~Yacout, J.~Jacobson, G.~Matthern, S.~Piet, D.~Shropshire, C.~Laws,
   }%DIFDELCMD < {%%%
 \DIFdel{VISION}%DIFDELCMD < }%%%
@@ -1723,12 +1685,12 @@ Urbana-Champaign for his assistance in technical editing.
 \DIFdel{Cycle}%DIFDELCMD < } {%%%
 \DIFdel{Dynamics}%DIFDELCMD < }%%%
 \DIFdel{, Waste Management.
-}%DIFDELCMD < 
+}%DIFDELCMD < 
 
 %DIFDELCMD < \end{thebibliography}
-%DIFDELCMD < %%%
+%DIFDELCMD < %%%
 \DIFdelend \DIFaddbegin \bibliography{../bibliography}
-\DIFaddend 
+\DIFaddend 
 
 % Prof. Huff discourages appendices in journal articles.
 % But, if you must, include one like so:
