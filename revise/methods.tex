@@ -80,7 +80,7 @@ every six months.
 \begin{table}[ht]
         \caption{Advanced reactor design specifications}
         \label{tab:reactor_summary}
-        \begin{tabular}{l c c c }
+        \begin{tabular}{p{4cm} p{3cm} p{3.8cm} }
             \hline
             Design Criteria & \gls{USNC} \gls{MMR} \cite{mitchell_usnc_2020}& 
                 X-Energy Xe-100 \cite{harlan_x-energy_2018,hussain_advances_2018} \\\hline
@@ -101,7 +101,7 @@ Each of the simulations model reactor deployment and operation from 1965 to
 in 2025 for the applicable scenarios. Therefore, in the no growth scenarios 
 the power demand remains constant 
 at the power produced in 2025. A linear (for no growth) or exponential 
-(for 1\% grwoth) equation models the energy demand of each transition 
+(for 1\% growth) equation models the energy demand of each transition 
 scenario. A \Cycamore GrowthRegion archetype\cite{huff_fundamental_2016}
 defines the energy demand of the scenario and determines if additional 
 facilities are required to meet the demand. The \glspl{LWR} are deployed 
@@ -143,7 +143,7 @@ scope of this work.
             \draw [arrow] (enrichment) -- node[anchor=east]{Enriched U}(fabrication);
             \draw [arrow] (enrichment) -- node[anchor=south]{Tails}(sinkllw);
             \draw [arrow] (fabrication) -- node[anchor=east]{Fresh UOX}(reactor);
-            \draw [arrow] (fabrication) -- node[anchor=west]{TRSIO fuel}(adv_reactor);
+            \draw [arrow] (fabrication) -- node[anchor=west]{TRISO fuel}(adv_reactor);
             \draw [arrow] (reactor) -- node[anchor=east]{Spent UOX}(wetstorage);
             \draw [arrow] (wetstorage) -- node[anchor=east]{Cool Spent UOX}(drystorage);
             \draw [arrow] (drystorage) -- node[anchor=east]{Casked Spent UOX}(sinkhlw);
