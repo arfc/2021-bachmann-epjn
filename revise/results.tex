@@ -498,7 +498,11 @@ Figure \ref{fig:cumulativeU_all}, deploying the \gls{MMR}
 requires more uranium than deploying the Xe-100 reactor for the same 
 transition scenario. Deploying the \gls{MMR} in a no growth transition 
 scenario requires more uranium than deploying Xe-100 reactors in a 1\% 
-growth transition. 
+growth transition. Table \ref{tab:U_summary} summarizes the \gls{HALEU} mass 
+requirements reported for each transition scenario: the average mass sent to 
+the advanced reactors once they are deployed, the maximum mass sent to the 
+advanced reactors in a single time step, and the cumulative mass sent to the 
+fleet of advanced reactors for the scenario. 
 
 \begin{figure}
     \centering 
@@ -507,8 +511,29 @@ growth transition.
     \label{fig:cumulativeU_all}
 \end{figure}
 
+
+\begin{table}
+    \centering
+    \caption{Summary of \gls{HALEU} mass required in each transition scenario}
+    \label{tab:U_summary}
+    \begin{tabular}{c c c c}
+        \hline
+        Scenario & Average (MTU) & Max (MTU) & Cumulative (MTU) \\\hline
+        2 & 73.12 & 719.25 & 51,112.7 \\
+        3 & 39.74 & 105.67 & 27,775.1 \\
+        4 & 113.64 & 782.38 & 81,818.6 \\
+        5 & 60.73 & 123.8 & 43,726.4 
+        \\\hline       
+    \end{tabular}
+\end{table}
+
 Figure \ref{fig:swu_all} compares the \gls{SWU} capacity required to enrich uranium for 
-all reactors and the advanced reactors in each scenario. The \gls{SWU} capacity required 
+all reactors and the advanced reactors in each scenario. Table \ref{tab:SWU_summary} 
+summarizes the \gls{SWU} capacity 
+requirements of each transition scenario: the average capacity required once the 
+advanced reactors are deployed, the maximum capacity needed to enrich uranium sent to 
+the advanced reactors at a single time step, and the cumulative capacity used to enrich 
+uranium for the fleet of advnaced reactors. The \gls{SWU} capacity required 
 to enrich uranium in Scenarios 1, 3, and 5 are similar in magnitude. Scenarios 2 and 4
 appear to require a greater \gls{SWU} capacity because the calculated \gls{SWU} capacity 
 is based on the mass of uranium sent to the reactors at each time step. Therefore, 
@@ -533,6 +558,21 @@ an enrichment facility.
     \caption{\gls{SWU} required to enrich natural uranium in all scenarios.}
     \label{fig:swu_all}
 \end{figure}
+
+\begin{table}
+    \centering
+    \caption{Summary of \gls{SWU} capacity requirements in each transition scenario}
+    \label{tab:SWU_summary}
+    \begin{tabular}{c c c c}
+        \hline
+        Scenario & Average (kg-SWU) & Max (kg-SWU) & Cumulative  (kg-SWU) \\\hline
+        2 & 2.07$\times 10^6$ & 20.3$\times 10^6$ & 14.4$\times 10^8$ \\
+        3 & 1.37$\times 10^6$ & 3.64$\times 10^6$ & 9.57$\times 10^8$ \\
+        4 & 3.21$\times 10^6$ & 22.1$\times 10^6$ & 23.1$\times 10^8$ \\
+        5 & 2.09$\times 10^6$ & 4.26$\times 10^6$ & 15.1$\times 10^8$
+        \\\hline       
+    \end{tabular}
+\end{table}
 
 An example of a possible facility for enriching uranium for the \glspl{MMR} in 
 Scenario 2 would 
