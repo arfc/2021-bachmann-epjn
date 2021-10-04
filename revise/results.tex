@@ -26,7 +26,7 @@ in 2025.
 Next, Figure \ref{fig:fuel_1} shows the mass of enriched uranium sent to 
 the \glspl{LWR} at each time step. The \glspl{LWR} are 
 defined to have an 18 month cycle length, with a third of the uranium 
-mass replaced each refueling outage. New reactors 
+mass replaced each refueling outage. New reactors in the simulations 
 are deployed with an entire core of uranium, leading 
 to increases in the mass of uranium sent to the reactors at a single time 
 step, such 
@@ -90,7 +90,9 @@ produced by
 GWe-y, before the \Cycamore ManagerInst deploys \glspl{MMR}.
 Therefore, the institution deploys the reactors in a reactionary fashion to 
 past energy production, as opposed to in response to forecasted energy 
-production.
+production. This deployment scheme will likely lead to an underestimation 
+of fuel requirements, because the reactors are deployed at a later time 
+than required by the energy demand.
 
 \begin{figure}
     \centering 
@@ -103,15 +105,18 @@ production.
 Next, Figure \ref{fig:fuel_2} shows the mass of enriched uranium sent to all 
 reactors in the scenario and just to the \glspl{MMR}. The \glspl{MMR} 
 do not require refueling during their lifetime, so uranium is  
-sent to these reactors only when they are deployed. This fueling scheme 
-causes the increases in uranium sent to \glspl{MMR} and the periods of 
-no uranium sent to them. All of the reactors receive an average of 104.94 
+sent to these reactors only when they are deployed. Thus, there are periods
+of uranuim demand corresponding the \gls{MMR} deployment, separated by periods
+of low or no demand. All of the reactors receive an average of 104.94 
 MTU/month and a maximum of 781.41 MTU after 2025. 
 This average is less than the average mass of enriched uranium 
-sent to the \glspl{LWR} in Scenario 1, but the maximum exceeds the maximum 
+sent to the \glspl{LWR} in Scenario 1, but the maximum sent to the \glspl{MMR}
+exceeds the maximum 
 mass of enriched uranium sent to \glspl{LWR} in Scenario 1 by 267.71 MTU.
 The \glspl{MMR} receive an average of 73.12 MTU/month and a maximum of 719.25 
-MTU once they are deployed in 2031. The average 
+MTU once they are deployed in 2031. The metrics for the \glspl{LWR} after 2025
+are the same as those in Scenario 1, because the \gls{LWR} deployment and decommissioning 
+scheme is the same in both scenarios.  The average 
 mass of enriched uranium sent to the 
 \glspl{MMR} is less than the average mass of uranium sent to the \glspl{LWR}
 prior to 2025. This is despite a greater maximum and multiple peaks larger
@@ -155,7 +160,7 @@ level. Enriching uranium for the \glspl{MMR} requires an average of
 kg-\gls{SWU}. These values are both more than the 
 average and maximum \gls{SWU} capacity needed to enrich uranium for the 
 \glspl{LWR} prior to 2025. Enriching uranium for all reactors after 2025 
-requires a total of 16.8$\times 10^8$ kg-SWU and enriching uranium for 
+requires a total of 16.8$\times 10^8$ kg-SWU. Enriching uranium for 
 just the \glspl{MMR} requires 14.4$\times 10^8$ kg-SWU. 
 
 \begin{figure}
@@ -183,8 +188,7 @@ reactors deployed, the energy produced by each reactor type, and the
 energy demand. Xe-100 reactors are deployed in October 2031, which is the 
 same as when \glspl{MMR}
 are deployed in Scenario 2. Scenario 3 deploys a maximum of 1,225 Xe-100 
-reactors. Nine times more \glspl{MMR} are needed than Xe-100 reactors to 
-meet the no-growth energy transition.
+reactors, nine times the number of \glspl{MMR} in Scenerio 2.
 
 Scenario 3 exhibits the same deficit between the energy produced and 
 demand between 2030-2050 that was observed in Scenario 2. However, the 
@@ -385,9 +389,9 @@ is a surplus of energy, up to 1.64 GWe-y.
     \label{fig:energy_rx_5}
 \end{figure}
 
-Figure \ref{fig:fuel_5} shows the mass of enriched uranium sent the all  
+Figure \ref{fig:fuel_5} shows the mass of enriched uranium sent to all of 
 the reactors in the scenario and the \gls{HALEU} mass sent just to the 
-Xe-100 reactors. There is a clear increase in the mass of \gls{HALEU} sent 
+Xe-100 reactors. There is an increase in the mass of \gls{HALEU} sent 
 to the Xe-100 reactors as time goes on, but this mass is still  
 low compared to the mass of enriched uranium sent to the \glspl{LWR} in 
 the scenario. An average of 95.46 MTU/month and a maximum of 347.28 MTU 
@@ -425,7 +429,7 @@ to enrich the uranium sent to all of the reactors, and just the Xe-100
 reactors. The \gls{SWU} capacity needed 
 to enrich uranium for the Xe-100 reactors starts out at a similar 
 amount as the \glspl{LWR}, but 
-increases as the energy demand and the number of reactors increases. 
+increases with the energy demand and number of reacotrs. 
 The \gls{SWU} capacity required to enrich uranium 
 for the Xe-100 reactors becomes greater than the capacity 
 required to enrich uranium for \glspl{LWR}, despite the Xe-100 
@@ -496,9 +500,11 @@ a large mass of uranium (more than 200 MTU) are sent to the \glspl{MMR}.
 Comparing the cumulative total mass of enriched uranium required in each scenario, 
 Figure \ref{fig:cumulativeU_all}, deploying the \gls{MMR} 
 requires more uranium than deploying the Xe-100 reactor for the same 
-transition scenario. Deploying the \gls{MMR} in a no growth transition 
+transition scenario. Figure \ref{fig:cumulativeU_all} also shows that 
+deploying the \gls{MMR} in a no growth transition 
 scenario requires more uranium than deploying Xe-100 reactors in a 1\% 
-growth transition. Table \ref{tab:U_summary} summarizes the \gls{HALEU} mass 
+growth transition for the time frame modeled. Table \ref{tab:U_summary} summarizes 
+the \gls{HALEU} mass 
 requirements reported for each transition scenario: the average mass sent to 
 the advanced reactors once they are deployed, the maximum mass sent to the 
 advanced reactors in a single time step, and the cumulative mass sent to the 
