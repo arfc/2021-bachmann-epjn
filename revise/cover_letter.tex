@@ -1,0 +1,79 @@
+\documentclass{letter}
+\usepackage{multirow}
+\usepackage{lineno}
+\usepackage{xspace}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\newenvironment{texto}[1][\textwidth]{
+   \begin{center} % so the minipage is centered
+   \begin{minipage}[t]{#1}
+   \raggedright % so the minipage's text is left justified
+}{
+  \end{minipage}
+   \end{center}
+}
+
+\usepackage[]{geometry}
+\usepackage[pages=some]{background}
+
+\backgroundsetup{
+scale=1,
+color=black,
+opacity=0.4,
+angle=0,
+contents={%
+  \includegraphics{background.pdf}
+  }%
+}
+
+\begin{document}
+\BgThispage
+\clearpage
+\begin{flushright}
+    Amanda M. Bachmann\\
+    amandab7@illinois.edu\\
+    104 S. Wright St.\\
+    Urbana, IL 61801\\
+
+    October 6, 2021
+\end{flushright}
+
+Dr. Fanny Courtin\\
+Editor, EPJ-N \\
+
+Dear Dr. Courtin,
+
+Please find enclosed a revised manuscript entitled: "Enrichment dynamics 
+for advanced reactor HALEU support" which I and my co-authors are 
+submitting for exclusive consideration for publication as an article 
+in EPJ-N. 
+
+This revised manuscript investigates and compares the front-end requirements
+for multiple transitions to advanced reactors fueled by High Assay Low Enriched 
+Uranium (HALEU). We simulated each fuel cycle using the open source fuel cycle 
+simulator Cyclus, and compared each transition based on the number of advanced 
+reactors that must be deployed, the mass of enriched uranium sent to the 
+advanced reactors, and the calculated Separative Work Unit capacity required 
+to enrich the uranium for the advanced reactors. This work informs on these 
+requirements to understand how the needs of deploying these advanced reactors 
+can best be met. 
+
+
+Thank you for your consideration of this work. I expect the work to be 
+of interest to a broad readership concerned with fuel cycle modeling and 
+the transition to advanced reactors in the United States. Please 
+address correspondence concerning this manuscript to me at the University 
+of Illinois.
+
+\begin{texto}[5cm]
+    Sincerly, \\
+    Amanda M. Bachmann\\
+    Graduate Student\\
+    University of Illinois\\
+    
+\end{texto}
+
+
+\end{document}
